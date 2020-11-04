@@ -21,12 +21,11 @@ public class IllegalFileInfo {
     //硬盘序列号
     private String diskSerial;
     //mac地址
-    private String mac;
+    private String macAddr;
     //扫描时间
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
-    private Date scanTime;
-    //非法文件信息
-    private List<String> files;
+    private Date dataTime;
+
 
     public String getResponsePerson() {
         return responsePerson;
@@ -68,27 +67,21 @@ public class IllegalFileInfo {
         this.diskSerial = diskSerial;
     }
 
-    public String getMac() {
-        return mac;
+    public String getMacAddr() {
+        return macAddr;
     }
 
-    public void setMac(String mac) {
-        this.mac = mac;
+    public void setMacAddr(String macAddr) {
+        this.macAddr = macAddr;
     }
 
-    public Date getScanTime() {
-        return scanTime;
+    public Date getDataTime() {
+        return dataTime;
     }
 
-    public void setScanTime(Date scanTime) {
-        this.scanTime = scanTime;
+    public void setDataTime(Date dataTime) {
+        this.dataTime = dataTime;
     }
 
-    public List<String> getFiles() {
-        return files;
-    }
 
-    public void setFiles(List<String> files) {
-        this.files = files;
-    }
 }

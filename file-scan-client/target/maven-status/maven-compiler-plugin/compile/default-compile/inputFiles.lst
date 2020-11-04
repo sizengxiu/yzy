@@ -1,6 +1,13 @@
-D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\IllegalFileInfo.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\service\RestService.java
 D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\service\FileScanService.java
-D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\DeviceInfo.java
-D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\FileScanClientApp.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\config\TaskPoolConfig.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\ScanResult.java
 D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\util\DateUtil.java
 D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\util\FileUtil.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\ListDirectory.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\config\ConstantParam.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\IllegalFileInfo.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\ScanLog.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\DeviceInfo.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\FileScanClientApp.java
+D:\workspace\myeclipse2018\yzy\file-scan-client\src\main\java\com\yzy\model\Result.java

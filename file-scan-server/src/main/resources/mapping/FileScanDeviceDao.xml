@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.dao.FileScanDeviceDao">
+  <resultMap id="BaseResultMap" type="com.yzy.model.FileScanDevice">
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="RESPONSE_PERSON" jdbcType="VARCHAR" property="responsePerson" />
+    <result column="USE_SCOPE" jdbcType="DECIMAL" property="useScope" />
+    <result column="SECRET_LEVEL" jdbcType="DECIMAL" property="secretLevel" />
+    <result column="DISK_SERIAL" jdbcType="VARCHAR" property="diskSerial" />
+    <result column="MAC_ADDR" jdbcType="VARCHAR" property="macAddr" />
+    <result column="MD5" jdbcType="CHAR" property="md5" />
+    <result column="DATA_TIME" jdbcType="TIMESTAMP" property="dataTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.yzy.model.FileScanDevice">
+    insert into FILE_SCAN_DEVICE (ID, RESPONSE_PERSON, USE_SCOPE, 
+      SECRET_LEVEL, DISK_SERIAL, MAC_ADDR, 
+      MD5, DATA_TIME)
+    values (#{id,jdbcType=DECIMAL}, #{responsePerson,jdbcType=VARCHAR}, #{useScope,jdbcType=DECIMAL}, 
+      #{secretLevel,jdbcType=DECIMAL}, #{diskSerial,jdbcType=VARCHAR}, #{macAddr,jdbcType=VARCHAR}, 
+      #{md5,jdbcType=CHAR}, #{dataTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yzy.model.FileScanDevice">
+    insert into FILE_SCAN_DEVICE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="responsePerson != null">
+        RESPONSE_PERSON,
+      </if>
+      <if test="useScope != null">
+        USE_SCOPE,
+      </if>
+      <if test="secretLevel != null">
+        SECRET_LEVEL,
+      </if>
+      <if test="diskSerial != null">
+        DISK_SERIAL,
+      </if>
+      <if test="macAddr != null">
+        MAC_ADDR,
+      </if>
+      <if test="md5 != null">
+        MD5,
+      </if>
+      <if test="dataTime != null">
+        DATA_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="responsePerson != null">
+        #{responsePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="useScope != null">
+        #{useScope,jdbcType=DECIMAL},
+      </if>
+      <if test="secretLevel != null">
+        #{secretLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="diskSerial != null">
+        #{diskSerial,jdbcType=VARCHAR},
+      </if>
+      <if test="macAddr != null">
+        #{macAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="md5 != null">
+        #{md5,jdbcType=CHAR},
+      </if>
+      <if test="dataTime != null">
+        #{dataTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="getMd5Count" parameterType="string" resultType="int">
+    select count(id) from FILE_SCAN_DEVICE where md5=#{md5}
+  </select>
+</mapper>

@@ -1,11 +1,17 @@
 package com.yzy.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.yzy.config.ConstantParam;
 import com.yzy.model.IllegalFileInfo;
+import com.yzy.model.ScanResult;
+import com.yzy.model.ScanLog;
 import com.yzy.util.DateUtil;
 import com.yzy.util.FileUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -19,17 +25,23 @@ import java.util.*;
  */
 @Component
 @Slf4j
+@PropertySource({"classpath:param.properties"})
 public class FileScanService implements CommandLineRunner {
 
-    private String dirName;
 
-    public String getDirName() {
-        return dirName;
-    }
 
-    public void setDirName(String dirName) {
-        this.dirName = dirName;
-    }
+    private int count;
+
+    @Autowired
+    private RestService restService;
+
+
+    @Value("${server.ip}")
+    private  String ip;
+    @Value("${server.port}")
+    private  String port;
+
+    private final String path="/fileScanServer/fileScan/saveScanResult";
 
     /**
      * 加载关键词信息
@@ -66,17 +78,19 @@ public class FileScanService implements CommandLineRunner {
      * @date: 2020/11/1 16:58
      */
     public void scanIllegalFile(Set<String> words,List<File> fileList) {
-//        setDirName(LocalDateTime.now().toString());
-        log.info("扫描开始时间：{}", getDirName());
+        count=0;
         log.info("扫描开始时间：{}", LocalDateTime.now());
 
         //存储扫描结果
-        List<String> resultList = new ArrayList<String>();
+        List<ScanLog> resultList = new ArrayList<ScanLog>();
         for (File file : fileList) {
             traverseFiles(file, words, resultList);
         }
+        log.info("扫描到非法文件个数：{}", resultList.size());
+        log.info("扫描文件总个数：{}", count);
         log.info("扫描结束时间：{}", LocalDateTime.now());
-        saveScanResult(resultList);
+        ScanResult result = saveScanResult(resultList);
+        sendScanResult(result);
     }
 
 
@@ -91,7 +105,7 @@ public class FileScanService implements CommandLineRunner {
      * @auther: szx
      * @date: 2020/11/1 16:58
      */
-    private void traverseFiles(File dir, Set<String> words, List<String> list) {
+    private void traverseFiles(File dir, Set<String> words, List<ScanLog> list) {
         //获取指定目录下当前的所有文件或文件夹对像
         File[] files = dir.listFiles();
         if (files == null)
@@ -99,12 +113,20 @@ public class FileScanService implements CommandLineRunner {
         for (File file : files) {
             if (file.isDirectory()) {
 //                System.out.println(file.getAbsolutePath());
+                if(file.getAbsolutePath().equals("C:\\ProgramData\\Application Data") || file.getAbsolutePath().equals("C:\\Users\\All Users\\Application Data")){
+                    continue;
+                }
                 traverseFiles(file, words, list);
             } else {
+                count++;
                 for (String word : words) {
                     if (file.getName().contains(word)) {
                         log.info("检测到非法文件名：{}", file.getAbsolutePath());
-                        list.add(file.getAbsolutePath());
+                        ScanLog scanResult=new ScanLog();
+                        scanResult.setFilePath(file.getAbsolutePath());
+                        scanResult.setIllegalWord(word);
+                        list.add(scanResult);
+                        break;
                     }
                 }
             }
@@ -119,21 +141,38 @@ public class FileScanService implements CommandLineRunner {
      * @auther: szx
      * @date: 2020/11/1 17:50
      */
-    private void saveScanResult(List<String> list) {
+    private ScanResult saveScanResult(List<ScanLog> list) {
         Properties prop = FileUtil.getPropertis("param.properties");
         String serialInfo = FileUtil.getHdSerialInfo();
         String macAddr = FileUtil.getMacAddr();
         IllegalFileInfo info = new IllegalFileInfo();
         info.setDiskSerial(serialInfo);
-        info.setMac(macAddr);
+        info.setMacAddr(macAddr);
         info.setCode(prop.getProperty("code"));
         info.setResponsePerson(prop.getProperty("responsePerson"));
-        info.setScanTime(new Date());
+        info.setDataTime(new Date());
         info.setUseScope(Integer.valueOf(prop.getProperty("useScope")));
         info.setSecretLevel(Integer.valueOf(prop.getProperty("secretLevel")));
-        info.setFiles(list);
-        String scanResultStr = JSONObject.toJSONString(info);
+//        info.setFiles(list);
+        //
+
+        ScanResult result=new ScanResult();
+        result.setDevice(info);
+        result.setList(list);
+        String scanResultStr = JSONObject.toJSONString(result);
         FileUtil.writeFile(scanResultStr, DateUtil.getToday());
+
+        return result;
+    }
+
+    /**
+     * 发送数据到服务器
+     * @param result
+     */
+    public void sendScanResult(ScanResult result){
+        String url="http://"+ip+":"+port+path;
+        String paramStr=JSONObject.toJSONString(result);
+        restService.doPost(url, paramStr, ConstantParam.tryTimes);
     }
 
     @Override
@@ -155,14 +194,19 @@ public class FileScanService implements CommandLineRunner {
         String dir = prop.getProperty("dir");
         //以下是判断按照指定目录扫描还是全盘扫描
         List<File> fileList=new ArrayList<>();
-        if(!StringUtils.isEmpty(dir)){
-            File file=new File(dir);
-            if(!file.exists()){
-                log.error("指定目录不存在【dir={}】,程序直接退出！！！",dir);
-                System.exit(-1);
+        if(!StringUtils.isEmpty(dir) && !"/".equals(dir)){
+            String[] dirs = dir.split(";");
+            for(String eachDir:dirs) {
+                File file = new File(dir);
+                if (!file.exists()) {
+                    log.error("指定目录不存在【dir={}】,程序直接退出！！！", dir);
+                    System.exit(-1);
+                }
+                log.info("扫描指定目录：{}", dir);
+                fileList.add(file);
             }
-            fileList.add(file);
         }else{
+            log.info("未指定具体的扫描目录，进行全盘扫描！");
             fileList.addAll(Arrays.asList(File.listRoots()));
         }
 

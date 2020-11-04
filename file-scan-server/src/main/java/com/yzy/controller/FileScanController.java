@@ -1,7 +1,11 @@
 package com.yzy.controller;
 
+import com.yzy.model.FileScanDevice;
 import com.yzy.model.IllegalFileInfo;
+import com.yzy.model.Result;
+import com.yzy.model.ScanResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class FileScanController {
 
     @RequestMapping("saveScanResult")
-    public int saveScanResult(IllegalFileInfo info){
-        log.info(info.toString());
-        return 0;
+    public Result saveScanResult(@RequestBody ScanResult scanResult){
+        log.info(scanResult.toString());
+        return Result.getSuccessResult();
     }
 }

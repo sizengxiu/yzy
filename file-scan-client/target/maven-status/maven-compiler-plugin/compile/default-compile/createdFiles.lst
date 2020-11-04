@@ -1,7 +1,14 @@
 com\yzy\FileScanClientApp.class
 com\yzy\model\DeviceInfo.class
+com\yzy\config\ConstantParam.class
+com\ListDirectory.class
+com\yzy\service\FileScanService.class
+com\yzy\model\ScanResult.class
+com\yzy\config\TaskPoolConfig.class
+com\yzy\model\ScanLog.class
 com\yzy\model\IllegalFileInfo.class
 com\yzy\service\FileScanService$1.class
 com\yzy\util\FileUtil.class
+com\yzy\model\Result.class
 com\yzy\util\DateUtil.class
-com\yzy\service\FileScanService.class
+com\yzy\service\RestService.class
