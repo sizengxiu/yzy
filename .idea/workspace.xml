@@ -2,41 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f1959f9-8ce8-4aff-9baa-dd96f03b498e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/config/TaskPoolConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/ScanLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/ScanResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/FileScanServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/ScanResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/service/FileScanService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/service/impl/FileScanServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/util/MD5Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-scan-client/src/main/resources/lastScanTime.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/file-scan-client-debug.2020-11-04.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/file-scan-client-error.2020-11-04.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/file-scan-client-info.2020-11-04.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/2020-11-02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/2020-11-03" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/2020-11-04" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/IllegalFileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/IllegalFileInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/FileScanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/FileScanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/src/main/resources/param.properties" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/src/main/resources/param.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/model/IllegalFileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/model/IllegalFileInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/service/FileScanService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/service/FileScanService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/classes/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/param.properties" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/classes/param.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/controller/FileScanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/controller/FileScanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-scan-server/src/test/java/com/yzy/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/service/FileScanService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/service/FileScanService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/service/FileScanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/service/FileScanService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/file-scan-client/target/classes/com/yzy/util/FileUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/file-scan-client-debug.2020-11-01.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/file-scan-client-error.2020-11-01.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/file-scan-client-error.2020-11-01.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/file-scan-client-trace.2020-11-04.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/file-scan-client-info.2020-11-01.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/file-scan-client-trace.2020-11-01.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/file-scan-client-trace.2020-11-01.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/file-scan-client-warn.2020-11-04.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/file-scan-client-warn.2020-11-01.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,43 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/RestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/IllegalFileInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-588">
-              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1354#1355#0" expanded="true" />
-                <element signature="e#1384#1385#0" expanded="true" />
-                <element signature="e#1430#1431#0" expanded="true" />
-                <element signature="e#1468#1469#0" expanded="true" />
-                <element signature="e#1518#1519#0" expanded="true" />
-                <element signature="e#1549#1550#0" expanded="true" />
-                <element signature="e#1595#1596#0" expanded="true" />
-                <element signature="e#1635#1636#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/DeviceInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#1459#1460#0" expanded="true" />
-                <element signature="e#1490#1491#0" expanded="true" />
-                <element signature="e#1536#1537#0" expanded="true" />
-                <element signature="e#1576#1577#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="233">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -102,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/FileScanService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="147" column="53" lean-forward="true" selection-start-line="147" selection-start-column="53" selection-end-line="147" selection-end-column="53" />
+            <state relative-caret-position="347">
+              <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,58 +60,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/service/impl/FileScanServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/lastScanTime.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/DateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="963">
-              <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="274">
+              <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/resources/mapping/FileScanLogDao.xml">
+        <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/resources/param.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+            <state relative-caret-position="209">
+              <caret line="13" column="12" selection-start-line="13" selection-end-line="13" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/dao/FileScanLogDao.java">
+        <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/resources/lastScanTime.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+            <state>
+              <caret column="12" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/param.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/ScanResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#259#260#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
+                <element signature="e#389#390#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/controller/FileScanController.java">
+        <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state relative-caret-position="182">
+              <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/FileScanServerApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-              <folding>
-                <element signature="e#248#249#0" expanded="true" />
-                <element signature="e#301#302#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -172,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/FileScanDevice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            <state relative-caret-position="831">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
         </entry>
@@ -212,7 +175,6 @@
         <option value="$PROJECT_DIR$/file-scan-client/src/main/resource/application.yml" />
         <option value="$PROJECT_DIR$/file-scan-client/target/classes/param.properties" />
         <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/DeviceInfo.java" />
-        <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java" />
         <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/FileScanClientApp.java" />
         <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/DateUtil.java" />
         <option value="$PROJECT_DIR$/file-scan-client/target/classes/keyWord.txt" />
@@ -246,6 +208,8 @@
         <option value="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/FileScanServerApplication.java" />
         <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/RestService.java" />
         <option value="$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/FileScanDevice.java" />
+        <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java" />
+        <option value="$PROJECT_DIR$/file-scan-client/src/main/resources/scanTime.properties" />
         <option value="$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/FileScanService.java" />
       </list>
     </option>
@@ -470,7 +434,31 @@
               <item name="file-scan-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="yzy" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yzy" type="462c0819:PsiDirectoryNode" />
+              <item name="file-scan-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yzy" type="462c0819:PsiDirectoryNode" />
+              <item name="file-scan-client" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yzy" type="462c0819:PsiDirectoryNode" />
+              <item name="file-scan-client" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
@@ -593,6 +581,19 @@
             <path>
               <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
               <item name="yzy" type="462c0819:PsiDirectoryNode" />
+              <item name="file-scan-server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yzy" type="462c0819:PsiDirectoryNode" />
+              <item name="file-scan-server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yzy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yzy" type="462c0819:PsiDirectoryNode" />
               <item name="result" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -615,7 +616,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604503959640" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604505954305" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -756,7 +757,7 @@
       <workItem from="1604409832237" duration="4755000" />
       <workItem from="1604416865765" duration="38000" />
       <workItem from="1604496210846" duration="437000" />
-      <workItem from="1604496728188" duration="7217000" />
+      <workItem from="1604496728188" duration="9191000" />
     </task>
     <task id="LOCAL-00001" summary="服务端初次提交">
       <created>1604243235466</created>
@@ -765,16 +766,24 @@
       <option name="project" value="LOCAL" />
       <updated>1604243235466</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="同步代码">
+      <created>1604504157169</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604504157169</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46196000" />
+    <option name="totallyTimeSpent" value="48170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1517572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1517572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -784,13 +793,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960065" weight="0.52101505" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960065" visible="true" weight="0.52101505" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3996828" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960065" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960065" weight="0.3298969" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039935" side_tool="true" weight="0.3298969" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.46867564" />
@@ -825,7 +834,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="服务端初次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="服务端初次提交" />
+    <MESSAGE value="同步代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="同步代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -866,6 +876,12 @@
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -884,39 +900,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/123.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/param.properties" />
-    <entry file="file://$PROJECT_DIR$/result/2020-11-01">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/keyWord.txt" />
-    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1353">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/resources/keyWord.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/file-scan-client-debug.2020-11-01.0.log" />
     <entry file="file://$PROJECT_DIR$/logs/file-scan-client-error.2020-11-01.0.log" />
     <entry file="file://$PROJECT_DIR$/logs/file-scan-client-error.2020-11-02.0.log" />
@@ -953,16 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,13 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/resources/param.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/service/FileScanService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -1112,23 +1078,6 @@
             <element signature="e#257#258#0" expanded="true" />
             <element signature="e#310#311#0" expanded="true" />
             <element signature="e#346#347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/ScanResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1201,30 +1150,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/RestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/FileScanDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/controller/FileScanController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/model/IllegalFileInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-588">
@@ -1243,10 +1168,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/controller/FileScanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/ScanResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-server/src/main/java/com/yzy/model/FileScanDevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/RestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/param.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/param.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/resources/param.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="12" selection-start-line="13" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/resources/lastScanTime.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/scanTime.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file-scan-client/target/classes/lastScanTime.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/file-scan-client/src/main/java/com/yzy/service/FileScanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="147" column="53" lean-forward="true" selection-start-line="147" selection-start-column="53" selection-end-line="147" selection-end-column="53" />
+        <state relative-caret-position="347">
+          <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

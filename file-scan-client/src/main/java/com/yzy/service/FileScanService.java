@@ -142,7 +142,8 @@ public class FileScanService implements CommandLineRunner {
      * @date: 2020/11/1 17:50
      */
     private ScanResult saveScanResult(List<ScanLog> list) {
-        Properties prop = FileUtil.getPropertis("param.properties");
+        String path="param.properties";
+        Properties prop = FileUtil.getPropertis(path);
         String serialInfo = FileUtil.getHdSerialInfo();
         String macAddr = FileUtil.getMacAddr();
         IllegalFileInfo info = new IllegalFileInfo();
@@ -162,6 +163,12 @@ public class FileScanService implements CommandLineRunner {
         String scanResultStr = JSONObject.toJSONString(result);
         FileUtil.writeFile(scanResultStr, DateUtil.getToday());
 
+        prop=new Properties();
+        //更新扫描时间
+        prop.setProperty("lastScanTime",DateUtil.getNowTime());
+        path=getClass().getClassLoader().getResource(".").getPath()+File.separator+"lastScanTime.properties";
+        FileUtil.updateProperties(prop,path);
+
         return result;
     }
 
@@ -177,19 +184,11 @@ public class FileScanService implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-       /* Properties propertis = FileUtil.getPropertis("param.properties");
-        log.info(propertis.toString());
-        Set<String> keyWords = loadKeyWords("keyWord.txt");
-        log.info(keyWords.toString());
-        scanIllegalFile(keyWords);
-        FileUtil.writeFile("测试", "123.txt");*/
 
         //开始
         Properties prop = FileUtil.getPropertis("param.properties");
         //运行模式
         int workMode = Integer.valueOf(prop.getProperty("workMode"));
-        //上次运行时间
-        String lastScanTime = prop.getProperty("lastScanTime");
         //指定目录
         String dir = prop.getProperty("dir");
         //以下是判断按照指定目录扫描还是全盘扫描
@@ -212,7 +211,7 @@ public class FileScanService implements CommandLineRunner {
 
         //0定时扫描，1立刻扫描（只执行一次）
         if(workMode==0){
-            runByTimer(lastScanTime,fileList);
+            runByTimer(fileList);
             log.info("workMode=0,进行定时扫描");
         }else{
             log.info("workMode=1,立刻进行扫描");
@@ -230,7 +229,12 @@ public class FileScanService implements CommandLineRunner {
      * @auther: szx
      * @date: 2020/11/1 18:37
      */
-    public void runByTimer(String lastScanTime,  List<File> fileList) {
+    public void runByTimer( List<File> fileList) {
+        Properties prop = FileUtil.getPropertis("lastScanTime.properties");
+        //运行模式
+        int workMode = Integer.valueOf(prop.getProperty("workMode"));
+        //上次运行时间
+        String lastScanTime = prop.getProperty("lastScanTime");
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 12); // 控制时
         calendar.set(Calendar.MINUTE, 0);       // 控制分

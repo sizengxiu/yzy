@@ -37,6 +37,22 @@ public class FileUtil {
         return prop;
     }
 
+    public static void updateProperties(Properties prop,String path){
+        //文件输出流
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(path);
+            //将Properties集合保存到流中
+            prop.store(fos, "Copyright (c) Boxcode Studio");
+            fos.close();//关闭流
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     /**
      * 内容输出到文件
      * @param:
