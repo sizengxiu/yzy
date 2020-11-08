@@ -25,4 +25,5 @@ public class ScanResult {
     public void setList(List<FileScanLog> list) {
         this.list = list;
     }
+
 }

@@ -55,6 +55,8 @@ public class FileScanDevice implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date dataTime;
 
+    private String code;
+
 
 
     private static final long serialVersionUID = 1L;
@@ -123,6 +125,11 @@ public class FileScanDevice implements Serializable {
         this.dataTime = dataTime;
     }
 
+    public String getCode() {
+        return code;
+    }
 
-
+    public void setCode(String code) {
+        this.code = code;
+    }
 }

@@ -8,16 +8,17 @@
     <result column="SECRET_LEVEL" jdbcType="DECIMAL" property="secretLevel" />
     <result column="DISK_SERIAL" jdbcType="VARCHAR" property="diskSerial" />
     <result column="MAC_ADDR" jdbcType="VARCHAR" property="macAddr" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
     <result column="MD5" jdbcType="CHAR" property="md5" />
     <result column="DATA_TIME" jdbcType="TIMESTAMP" property="dataTime" />
   </resultMap>
   <insert id="insert" parameterType="com.yzy.model.FileScanDevice">
-    insert into FILE_SCAN_DEVICE (ID, RESPONSE_PERSON, USE_SCOPE, 
+    insert into FILE_SCAN_DEVICE ( RESPONSE_PERSON, USE_SCOPE,
       SECRET_LEVEL, DISK_SERIAL, MAC_ADDR, 
-      MD5, DATA_TIME)
-    values (#{id,jdbcType=DECIMAL}, #{responsePerson,jdbcType=VARCHAR}, #{useScope,jdbcType=DECIMAL}, 
+      MD5, DATA_TIME,CODE)
+    values ( #{responsePerson,jdbcType=VARCHAR}, #{useScope,jdbcType=DECIMAL},
       #{secretLevel,jdbcType=DECIMAL}, #{diskSerial,jdbcType=VARCHAR}, #{macAddr,jdbcType=VARCHAR}, 
-      #{md5,jdbcType=CHAR}, #{dataTime,jdbcType=TIMESTAMP})
+      #{md5,jdbcType=CHAR}, #{dataTime,jdbcType=TIMESTAMP},#{code})
   </insert>
   <insert id="insertSelective" parameterType="com.yzy.model.FileScanDevice">
     insert into FILE_SCAN_DEVICE

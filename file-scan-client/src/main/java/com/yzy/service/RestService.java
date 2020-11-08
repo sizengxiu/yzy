@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -62,9 +63,9 @@ public class RestService {
             // 创建httpPost远程连接实例
             HttpPost httpPost = new HttpPost(url);
             // 配置请求参数实例
-            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(10000)// 设置连接主机服务超时时间
-                    .setConnectionRequestTimeout(10000)// 设置连接请求超时时间
-                    .setSocketTimeout(30000)// 设置读取数据连接超时时间
+            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(5000)// 设置连接主机服务超时时间
+                    .setConnectionRequestTimeout(5000)// 设置连接请求超时时间
+                    .setSocketTimeout(5000)// 设置读取数据连接超时时间
                     .build();
             // 为httpPost实例设置配置
             httpPost.setConfig(requestConfig);
@@ -82,11 +83,14 @@ public class RestService {
             CloseableHttpResponse httpResponse = httpClient.execute(httpPost);
             // 从响应对象中获取响应内容
             String result = EntityUtils.toString(httpResponse.getEntity());
-            json = JSONObject.parseObject(result);
-            if(400!=json.getInteger("status")){
-                log.info("请求异常：{}",json.toJSONString());
+            log.info("请求返回结果：{}",result);
+            if(!StringUtils.isEmpty(result)){
+                json = JSONObject.parseObject(result);
+                if(200!=json.getInteger("code")){
+                    log.info("请求异常：{}",json.toJSONString());
+                }
+                return JSONObject.toJavaObject(json,Result.class);
             }
-            return JSONObject.toJavaObject(json,Result.class);
         } catch (UnsupportedEncodingException e) {
             log.error("URLUtil.httpPostRequest encounters an UnsupportedEncodingException : {}",e);
         } catch (IOException e) {

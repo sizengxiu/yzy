@@ -17,7 +17,7 @@ import java.util.Set;
 @Slf4j
 public class FileUtil {
 
-    public static final String resultDir="result";
+
     /**
      * 读取配置文件
      *
@@ -60,11 +60,12 @@ public class FileUtil {
      * @auther: szx
      * @date: 2020/11/1 15:13
      */
-    public static boolean writeFile(String content, String fileName) {
+    public static boolean writeFile(String content,String path, String fileName,boolean append) {
         FileWriter fileWritter = null;
+        BufferedWriter bufferedWriter=null;
 //        fileName=resultDir+File.separator+fileName;
         try {
-            File file = new File(resultDir,fileName);
+            File file = new File(path,fileName);
             if(!file.getParentFile().exists()){
                 file.getParentFile().mkdirs();
             }
@@ -72,22 +73,63 @@ public class FileUtil {
                 file.createNewFile();
             }
             //使用true，即进行append file
-            fileWritter = new FileWriter(file, true);
-            fileWritter.write(content);
+//            fileWritter = new FileWriter(file, append);
+//            fileWritter.write(content);
+            bufferedWriter= new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file,append), "utf-8"));
+            bufferedWriter.write(content);
             log.debug("内容输出到文件，【content={},fileName={}】",content, fileName);
         } catch (IOException e) {
             log.error("文件输出异常,【content={},fileName={}】,异常详细：{}", content, fileName, e);
             return false;
         }finally {
-            if (fileWritter != null) {
+            if (bufferedWriter != null) {
                 try {
-                    fileWritter.close();
+                    bufferedWriter.close();
                 } catch (IOException e) {
                     log.error("文件输出流关闭异常,【content={},fileName={}】,异常详细：{}", content, fileName, e);
                 }
             }
         }
         return true;
+    }
+
+
+    /**
+     * 读取文件
+     * @param fileName
+     * @return
+     */
+    public static String readFile(String fileName,boolean notExistCreate) {
+        StringBuilder sb=new StringBuilder();
+        try(BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "utf-8"));) {
+            String str;
+            while ((str = in.readLine()) != null) {
+                sb.append(str);
+            }
+        }catch(FileNotFoundException e){
+            if(notExistCreate) {
+                File file = new File(fileName);
+                if (!file.exists()) {
+                    log.info("要读取的文件{}不存在，创建文件！",fileName);
+                    try {
+                        log.info(file.getParentFile().isDirectory()+"");
+                        log.info(file.getParentFile().exists()+"");
+                        if(file.getParentFile().isDirectory() && !file.getParentFile().exists()){
+                            log.info("{}父目录不存在，进行创建！",file.getParentFile().getAbsolutePath());
+                            file.getParentFile().mkdirs();
+                        }
+                        file.createNewFile();
+                        log.info("文件创建成功！");
+                        return readFile(fileName,false);
+                    } catch (IOException e1) {
+                        log.error("{}文件读取发现文件不存在，创建文件失败：{}", fileName, e);
+                    }
+                }
+            }
+        }catch (IOException e) {
+            log.error("{}文件读取异常：{}",fileName,e);
+        }
+        return sb.toString();
     }
     /**
      * 获取磁盘目录
@@ -113,8 +155,8 @@ public class FileUtil {
      * @auther: szx
      * @date: 2020/11/1 17:26
      */
-    public static void createDir(String dirName){
-        File file = new File(resultDir,dirName);
+    public static void createDir(String path,String dirName){
+        File file = new File(path,dirName);
         if(!file.exists()){
             file.mkdirs();
         }
@@ -162,8 +204,6 @@ public class FileUtil {
         InetAddress ip;
         try {
             ip = InetAddress.getLocalHost();
-
-            System.out.println("Current IP address : " + ip.getHostAddress());
 
             NetworkInterface network = NetworkInterface.getByInetAddress(ip);
 

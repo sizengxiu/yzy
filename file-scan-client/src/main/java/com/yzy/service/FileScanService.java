@@ -3,10 +3,12 @@ package com.yzy.service;
 import com.alibaba.fastjson.JSONObject;
 import com.yzy.config.ConstantParam;
 import com.yzy.model.IllegalFileInfo;
+import com.yzy.model.Result;
 import com.yzy.model.ScanResult;
 import com.yzy.model.ScanLog;
 import com.yzy.util.DateUtil;
 import com.yzy.util.FileUtil;
+import com.yzy.util.MacUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,6 +36,9 @@ public class FileScanService implements CommandLineRunner {
 
     @Autowired
     private RestService restService;
+
+    @Autowired
+    private SendFailService sendFailService;
 
 
     @Value("${server.ip}")
@@ -90,7 +95,12 @@ public class FileScanService implements CommandLineRunner {
         log.info("扫描文件总个数：{}", count);
         log.info("扫描结束时间：{}", LocalDateTime.now());
         ScanResult result = saveScanResult(resultList);
-        sendScanResult(result);
+        String msg = JSONObject.toJSONString(result);
+        Result sendResult = sendScanResult(msg);
+        if(!sendResult.isSuccess()){
+            log.info("扫描结果发送失败，将本次扫描结果存入本地文件！");
+            sendFailService.saveFaildDataToFile(msg+ConstantParam.SEPARATOR,true);
+        }
     }
 
 
@@ -145,7 +155,7 @@ public class FileScanService implements CommandLineRunner {
         String path="param.properties";
         Properties prop = FileUtil.getPropertis(path);
         String serialInfo = FileUtil.getHdSerialInfo();
-        String macAddr = FileUtil.getMacAddr();
+        String macAddr = MacUtil.getMacAddr();
         IllegalFileInfo info = new IllegalFileInfo();
         info.setDiskSerial(serialInfo);
         info.setMacAddr(macAddr);
@@ -161,12 +171,12 @@ public class FileScanService implements CommandLineRunner {
         result.setDevice(info);
         result.setList(list);
         String scanResultStr = JSONObject.toJSONString(result);
-        FileUtil.writeFile(scanResultStr, DateUtil.getToday());
+        FileUtil.writeFile(scanResultStr, ConstantParam.RESULT_DIR,DateUtil.getToday(),true);
 
         prop=new Properties();
         //更新扫描时间
         prop.setProperty("lastScanTime",DateUtil.getNowTime());
-        path=getClass().getClassLoader().getResource(".").getPath()+File.separator+"lastScanTime.properties";
+        path=ConstantParam.CURRENT_DIR+File.separator+"lastScanTime.properties";
         FileUtil.updateProperties(prop,path);
 
         return result;
@@ -176,10 +186,18 @@ public class FileScanService implements CommandLineRunner {
      * 发送数据到服务器
      * @param result
      */
-    public void sendScanResult(ScanResult result){
+    public Result sendScanResult(ScanResult result){
         String url="http://"+ip+":"+port+path;
         String paramStr=JSONObject.toJSONString(result);
-        restService.doPost(url, paramStr, ConstantParam.tryTimes);
+        return restService.doPost(url, paramStr, ConstantParam.TRYTIMES);
+    }
+    /**
+     * 发送数据到服务器
+     * @param msg
+     */
+    public Result sendScanResult(String msg){
+        String url="http://"+ip+":"+port+path;
+       return  restService.doPost(url, msg, ConstantParam.TRYTIMES);
     }
 
     @Override
@@ -277,6 +295,7 @@ public class FileScanService implements CommandLineRunner {
      * @date: 2020/11/1 18:39
      */
     public void runRightNow(List<File> fileList) {
+        sendFailService.sendFailData();
         Set<String> keyWords = loadKeyWords("keyWord.txt");
         scanIllegalFile(keyWords,fileList);
     }

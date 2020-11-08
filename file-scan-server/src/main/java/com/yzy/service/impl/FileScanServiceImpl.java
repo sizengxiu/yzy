@@ -11,6 +11,7 @@ import com.yzy.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,8 +29,10 @@ public class FileScanServiceImpl implements FileScanService {
     private FileScanLogDao logDao;
 
     @Override
-    public int saveScanResult(ScanResult result) {
+    public int            saveScanResult(ScanResult result) {
         FileScanDevice device = result.getDevice();
+        Date dataTime = device.getDataTime();
+        device.setDataTime(null);
         String md5 = MD5Util.getMD5(JSONObject.toJSONString(device));
         device.setMd5(md5);
         int md5Count = deviceDao.getMd5Count(md5);
@@ -37,6 +40,7 @@ public class FileScanServiceImpl implements FileScanService {
         if(md5Count==0){
             deviceDao.insert(device);
         }
+        device.setDataTime(dataTime);
         //
         List<FileScanLog> list = result.getList();
         //没有扫描到非法文件，则在数据库中插入一条空记录，记录扫描时间

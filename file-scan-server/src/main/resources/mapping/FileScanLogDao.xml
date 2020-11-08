@@ -52,14 +52,28 @@
     </trim>
   </insert>
 
-  <insert id="insertByBatch" parameterType="java.util.List" useGeneratedKeys="false">
+  <insert id="insertByBatch1" parameterType="java.util.List" useGeneratedKeys="false">
     INSERT ALL
     <foreach item="item" index="index" collection="list">
       insert into FILE_SCAN_LOG ( MD5, SCAN_TIME,
       FILE_PATH, ILLEGAL_WORD)
-      values (#{jdbcType=DECIMAL}, #{md5,jdbcType=CHAR}, #{scanTime,jdbcType=TIMESTAMP},
-      #{filePath,jdbcType=VARCHAR}, #{illegalWord,jdbcType=VARCHAR})
+      values ( #{item.md5,jdbcType=CHAR}, #{item.scanTime,jdbcType=TIMESTAMP},
+      #{item.filePath,jdbcType=VARCHAR}, #{item.illegalWord,jdbcType=VARCHAR})
     </foreach>
     SELECT 1 FROM DUAL
+  </insert>
+  <insert id="insertByBatch" parameterType="java.util.List" useGeneratedKeys="false">
+      insert into FILE_SCAN_LOG ( MD5, SCAN_TIME,
+      FILE_PATH, ILLEGAL_WORD)
+      select  * from
+      <foreach collection="list" item="item" separator="union all" open="(" close=")">
+        select
+        #{item.md5,jdbcType=VARCHAR} as md5,
+        #{item.scanTime,jdbcType=TIMESTAMP} as scanTime,
+        #{item.filePath,jdbcType=VARCHAR} as filePath,
+        #{item.illegalWord,jdbcType=VARCHAR} as illegalWord
+        from dual
+      </foreach>
+
   </insert>
 </mapper>
