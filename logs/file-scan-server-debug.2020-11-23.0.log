@@ -1,0 +1,40 @@
+2020-11-23 22:10:18.893 [main] DEBUG com.yzy.FileScanServerApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-23 23:36:52.610 [main] DEBUG com.yzy.FileScanServerApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-23 23:40:14.381 [main] DEBUG com.yzy.FileScanServerApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-23 23:41:04.686 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("x-forwarded-for")=null
+2020-11-23 23:41:04.688 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("Proxy-Client-IP")=null
+2020-11-23 23:41:04.688 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("WL-Proxy-Client-IP")=null
+2020-11-23 23:41:04.688 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("HTTP_CLIENT_IP")=null
+2020-11-23 23:41:04.688 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("HTTP_X_FORWARDED_FOR")=null
+2020-11-23 23:41:04.688 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getRemoteAddr()=127.0.0.1
+2020-11-23 23:41:04.689 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - host: 127.0.0.1:8080
+2020-11-23 23:41:04.689 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - connection: keep-alive
+2020-11-23 23:41:04.689 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - cache-control: max-age=0
+2020-11-23 23:41:04.689 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - upgrade-insecure-requests: 1
+2020-11-23 23:41:04.689 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-site: none
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-mode: navigate
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-user: ?1
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-dest: document
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - accept-encoding: gzip, deflate, br
+2020-11-23 23:41:04.690 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - accept-language: zh-CN,zh;q=0.9
+2020-11-23 23:41:26.931 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("x-forwarded-for")=null
+2020-11-23 23:41:26.931 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("Proxy-Client-IP")=null
+2020-11-23 23:41:26.931 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("WL-Proxy-Client-IP")=null
+2020-11-23 23:41:26.931 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("HTTP_CLIENT_IP")=null
+2020-11-23 23:41:26.931 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getHeader("HTTP_X_FORWARDED_FOR")=null
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - request.getRemoteAddr()=127.0.0.1
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - host: 127.0.0.1:8080
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - connection: keep-alive
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - cache-control: max-age=0
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - upgrade-insecure-requests: 1
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-site: none
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-mode: navigate
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-user: ?1
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - sec-fetch-dest: document
+2020-11-23 23:41:26.932 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - accept-encoding: gzip, deflate, br
+2020-11-23 23:41:26.933 [https-jsse-nio-8080-exec-5] DEBUG com.yzy.util.IpUtil - accept-language: zh-CN,zh;q=0.9
+2020-11-23 23:56:04.433 [main] DEBUG com.yzy.FileScanServerApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE

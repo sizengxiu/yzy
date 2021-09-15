@@ -1,0 +1,282 @@
+package com.yzy.service.impl;
+
+import com.yzy.dao.*;
+import com.yzy.exception.BussinessException;
+import com.yzy.model.*;
+import com.yzy.service.DutyPlanService;
+import com.yzy.util.CollectionUtil;
+import com.yzy.util.DateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
+
+/**
+ * @user szx
+ * @date 2021/5/17 22:16
+ */
+@Service
+public class DutyPlanServiceImpl implements DutyPlanService {
+
+
+    @Autowired
+    private YzzbDutyCandidateDao candidateDao;
+
+    @Autowired
+    private YzzbDutyGroupDao groupDao;
+    @Autowired
+    private YzzbDutyGroupUserDao groupUserDao;
+
+    @Autowired
+    private YzzbDutyZbDao zbDao;
+
+    @Override
+    public List<DutyResultVo> getPbListByDate(int year, int month) {
+        Date date = DateUtil.getMonthFirstDay(year, month);
+        List<DutyResultVo> list = zbDao.getPbListByDate(date);
+        return list;
+    }
+    @Override
+    public List<DutyResultVo> planByDate(int year,int month) {
+        //1.合法性检测，如果已经排过班，则不允许排班
+        if(checkIfPublishedByDate(year, month)){
+            throw new BussinessException("该月份已经存在排班数据，不允许重新排班！");
+        }
+        //2.获取后续值班人员列表以及分组信息
+        Map<Integer, Set<Integer>> groupMap=new HashMap<>();//用户分组信息
+        Map<Integer,List<Integer>> candidateMap=new HashMap<>();//候选值班员信息按值班周几分类
+        Map<Integer,YzzbDutyCandidateVo> candidateDic=new HashMap<>();//候选值班员信息
+
+        List<YzzbDutyCandidateVo> candidateList = candidateDao.getCandidateList();
+        if(CollectionUtil.isEmpty(candidateList)){
+            throw new BussinessException("未查询到候选的值班员，请确认值班员是否为空！");
+        }
+
+        for(YzzbDutyCandidateVo candidate:candidateList){
+            Integer currentIndexWeek = candidate.getCurrentIndexWeek();
+            Integer id = candidate.getId();
+            //1.放入dic
+            candidateDic.put(id,candidate);
+            //2.按值班周几分组
+            List<Integer> eachCandidateList = candidateMap.get(currentIndexWeek);
+            if(eachCandidateList==null){
+                eachCandidateList=new LinkedList<>();
+                candidateMap.put(currentIndexWeek,eachCandidateList);
+            }
+            eachCandidateList.add(id);
+
+        }
+
+        List<YzzbDutyGroupUser> userGroupList = groupUserDao.getUserGroupList();
+        //如果存在分组信息
+        if(!CollectionUtil.isEmpty(userGroupList)){
+            for(YzzbDutyGroupUser userGroup:userGroupList){
+                Integer groupid = userGroup.getGroupid();
+                Set<Integer> groupUserSet = groupMap.get(groupid);
+                if(groupUserSet==null){
+                    groupUserSet=new HashSet<>();
+                    groupMap.put(groupid,groupUserSet);
+                }
+                groupUserSet.add(groupid);
+            }
+        }
+        //3.组织成前端需要的数据结构
+        List<DutyResultVo> resultList=new LinkedList<>();
+
+        //已经参与排班的人
+        Set<Integer> alreadyUsedUserSet=new HashSet<>();
+
+        int monthDays = DateUtil.getMonthDays(year, month);
+        int weekIndex = DateUtil.getFirstDayWeekIndex(year, month);
+
+        DutyResultVo dutyResultVo=new DutyResultVo();
+        for(int i=1;i<=monthDays;i++){
+/*            YzzbDutyResult yzzbDutyResult=new YzzbDutyResult();
+            Map<Integer, DayDutyResultVo> dicMap = getDayDutyResultVoMap(yzzbDutyResult);*/
+            for(;weekIndex<=7&&i<=monthDays;weekIndex++,i++){
+//                DayDutyResultVo dayDutyResultVo = dicMap.get(weekIndex);
+                List<Integer> list = selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, candidateDic);
+                setCandidateInfo(dutyResultVo,i,weekIndex,list,candidateDic,resultList);
+            }
+            i--;
+           weekIndex-=7;
+        }
+        return resultList;
+    }
+
+
+
+    /**
+     * 把周一到周天的结果扔到map中去
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/6/6 17:55
+     */
+    private Map<Integer,DayDutyResultVo> getDayDutyResultVoMap(YzzbDutyResult yzzbDutyResult){
+        Map<Integer,DayDutyResultVo> dic=new HashMap<>();
+        //按月排班，会生成30个对象，采用原型模式
+        DayDutyResultVo dayDutyResultVo=new DayDutyResultVo();
+        yzzbDutyResult.setMonday(dayDutyResultVo.clone());
+        yzzbDutyResult.setTuesday(dayDutyResultVo.clone());
+        yzzbDutyResult.setWednesday(dayDutyResultVo.clone());
+        yzzbDutyResult.setThursday(dayDutyResultVo.clone());
+        yzzbDutyResult.setFriday(dayDutyResultVo.clone());
+        yzzbDutyResult.setSaturday(dayDutyResultVo.clone());
+        yzzbDutyResult.setSunday(dayDutyResultVo.clone());
+        dic.put(1,yzzbDutyResult.getMonday());
+        dic.put(2,yzzbDutyResult.getTuesday());
+        dic.put(3,yzzbDutyResult.getWednesday());
+        dic.put(4,yzzbDutyResult.getThursday());
+        dic.put(5,yzzbDutyResult.getFriday());
+        dic.put(6,yzzbDutyResult.getThursday());
+        dic.put(7,yzzbDutyResult.getSunday());
+        return dic;
+    }
+
+    /**
+     *  选择一天的3个值班员
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/6/25 16:10
+     */
+    private List<Integer> selectCandidate(Map<Integer, Set<Integer>> groupMap,Map<Integer,List<Integer>> candidateMap,
+                                               Set<Integer> alreadyUsedUserSet,int weekIndex,
+                                              Map<Integer,YzzbDutyCandidateVo> candidateDic){
+        List<Integer> resultList=new LinkedList<>();//排班结果
+        int count=0;
+        List<Integer> candidateList = candidateMap.get(weekIndex);
+        Iterator<Integer> iterator = candidateList.iterator();
+        while(iterator.hasNext() && count<3){
+            Integer id=iterator.next();
+            //1.如果用户已经在本月内排过班，则从候选排班人员中删除
+            if(alreadyUsedUserSet.contains(id)){
+                iterator.remove();
+            }else{
+                //2.选择用户后，并从和用户同一个组的人员中选择另外的排班人员;
+                YzzbDutyCandidateVo candidate = candidateDic.get(id);
+                //当前选择的人员不在分组中直接选择
+                Integer groupId = candidate.getGroupId();
+                if(groupId ==null){
+                    resultList.add(id);
+                    alreadyUsedUserSet.add(id);
+                    count++;
+                    continue;
+                }
+                //3.如果是排的第三个值班员，则不选择在分组中的人,跳过这个候选人
+                if(count==2){
+                    continue;
+                }
+                //4.如果排的是第2个值班员，则不选择在分组中，且分组中人数为3的人
+                if(count==1){
+                    Set<Integer> groupSet = groupMap.get(groupId);
+                    if(groupSet.size()>2){
+                        continue;
+                    }
+                    //改分组中只有两个人，把另一个人也选上
+                    resultList.add(id);
+                    alreadyUsedUserSet.add(id);
+                    count++;
+                    Iterator<Integer> groupItr = groupSet.iterator();
+                    while(groupItr.hasNext()){
+                        Integer anotherId = groupItr.next();
+                        if(anotherId.equals(id)){
+                            resultList.add(anotherId);
+                            alreadyUsedUserSet.add(id);
+                            count++;
+                        }
+                    }
+                }
+
+                if(count>=3){
+                    break;
+                }
+            }
+        }
+        //count<3，说明循环了一遍了，因为分组规则限制找不到候选人了，分以下几种情况：
+        //      1.选了一个人，则剩余的人全都是3人分组，此时需要把这个人去掉，然后重新选择
+        //      2.选了两个人，又分两种情况：
+        //        2.1这两个人一个组，则此时剩余的人全都在分组中，为了保护分组规则，也为了简单起见，抛出异常给管理员提醒
+        //        2.2这两个人都没有分组，则此时剩余的人也全都在分组中，处理方式同上
+        //      3.人员全部分完了，鉴于公司已有人数，暂不考虑这种情况
+        if(count<3){
+            if(count==2){
+                throw new BussinessException("分组过多，不拆分组的情况下，无法继续排班！");
+            }
+            Integer id = resultList.get(0);
+            alreadyUsedUserSet.add(id);
+            return  selectCandidate(groupMap,candidateMap,alreadyUsedUserSet,weekIndex,candidateDic);
+        }
+        iterator = candidateList.iterator();
+        int deteleCount=0;
+        while(iterator.hasNext() && deteleCount<3){
+            int id = iterator.next();
+            for(int selecteduserId:resultList){
+                if(id==selecteduserId){
+                    iterator.remove();
+                    deteleCount++;
+                    break;
+                }
+            }
+        }
+
+        return resultList;
+    }
+
+    /**
+     * 设置 值班用户信息
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/6/25 16:15
+     */
+    private void setCandidateInfo(DayDutyResultVo dayDutyResultVo,List<Integer> list,Map<Integer,YzzbDutyCandidateVo> dic){
+        Integer id = list.get(0);
+        YzzbDutyCandidateVo yzzbDutyCandidateVo = dic.get(id);
+        dayDutyResultVo.setEmployeeAName(yzzbDutyCandidateVo.getUserName());
+        dayDutyResultVo.setEmployeeAphone(yzzbDutyCandidateVo.getPhone());
+
+
+        id = list.get(1);
+        yzzbDutyCandidateVo = dic.get(id);
+        dayDutyResultVo.setEmployeeBName(yzzbDutyCandidateVo.getUserName());
+        dayDutyResultVo.setEmployeeBphone(yzzbDutyCandidateVo.getPhone());
+
+        id = list.get(2);
+        yzzbDutyCandidateVo = dic.get(id);
+        dayDutyResultVo.setEmployeeCName(yzzbDutyCandidateVo.getUserName());
+        dayDutyResultVo.setEmployeeCphone(yzzbDutyCandidateVo.getPhone());
+    }
+
+
+    /**
+     * 设置 值班用户信息
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/6/25 16:15
+     */
+    private List<DutyResultVo> setCandidateInfo(DutyResultVo dutyResultVo,int day,int weekIndex,List<Integer> list,Map<Integer,YzzbDutyCandidateVo> dic,List<DutyResultVo> resultList){
+        for(Integer id:list){
+            DutyResultVo resultVo = dutyResultVo.clone();
+            YzzbDutyCandidateVo yzzbDutyCandidateVo = dic.get(id);
+            resultVo.setDay(day);
+            resultVo.setName(yzzbDutyCandidateVo.getUserName());
+            resultVo.setPhone(yzzbDutyCandidateVo.getPhone());
+            resultVo.setSex(yzzbDutyCandidateVo.getSex());
+            resultVo.setWeekIndex(weekIndex);
+            resultList.add(resultVo);
+        }
+        return resultList;
+    }
+
+
+    public boolean checkIfPublishedByDate(int year,int month){
+        Date endDate = DateUtil.getMonthLastDay(year, month);
+        Date startDate = DateUtil.getMonthFirstDay(year, month);
+//        return yzzbDutyHistoryDao.getPublishDataCountByDate(startDate,endDate)==0?true:false;
+        return false;
+    }
+}

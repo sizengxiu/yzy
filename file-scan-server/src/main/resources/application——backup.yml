@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /fileScanServer
+  ssl:
+    key-store: classpath:localhost.jks
+    key-store-password: changeit
+    keyStoreType: JKS
+    key-alias: localhost
+#    client-auth: need
+    trust-store: classpath:localhost.jks
+    trust-store-password: changeit
+    trust-store-provider: SUN
+    trust-store-type: JKS
+    client-auth: need
+spring:
+  application:
+    name: fileScanServer
+  datasource:
+    username: yzyxxh
+    password: yzyxxh123
+    url: jdbc:oracle:thin:@192.168.1.57:1521:orcl
+    driver-class-name: oracle.jdbc.OracleDriver
+mybatis:
+  mapper-locations: classpath:mapping/*.xml

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.dao.YzzbDutyZbDao">
+  <resultMap id="BaseResultMap" type="com.yzy.model.YzzbDutyZb">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="publish_state" jdbcType="INTEGER" property="publishState" />
+    <result column="state" jdbcType="TIMESTAMP" property="state" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="week_index" jdbcType="INTEGER" property="weekIndex" />
+  </resultMap>
+  <resultMap id="zb" type="com.yzy.model.DutyResultVo">
+    <id column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="week_index" jdbcType="INTEGER" property="weekIndex" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `date`, publish_state, `state`, insert_time, update_time, week_index
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yzzb_duty_zb
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yzzb_duty_zb
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyZb" useGeneratedKeys="true">
+    insert into yzzb_duty_zb (`date`, publish_state, `state`, 
+      insert_time, update_time, week_index
+      )
+    values (#{date,jdbcType=DATE}, #{publishState,jdbcType=INTEGER}, #{state,jdbcType=TIMESTAMP}, 
+      #{insertTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{weekIndex,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyZb" useGeneratedKeys="true">
+    insert into yzzb_duty_zb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="date != null">
+        `date`,
+      </if>
+      <if test="publishState != null">
+        publish_state,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+      <if test="insertTime != null">
+        insert_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="weekIndex != null">
+        week_index,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="publishState != null">
+        #{publishState,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertTime != null">
+        #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weekIndex != null">
+        #{weekIndex,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yzy.model.YzzbDutyZb">
+    update yzzb_duty_zb
+    <set>
+      <if test="date != null">
+        `date` = #{date,jdbcType=DATE},
+      </if>
+      <if test="publishState != null">
+        publish_state = #{publishState,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insertTime != null">
+        insert_time = #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weekIndex != null">
+        week_index = #{weekIndex,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yzy.model.YzzbDutyZb">
+    update yzzb_duty_zb
+    set `date` = #{date,jdbcType=DATE},
+      publish_state = #{publishState,jdbcType=INTEGER},
+      `state` = #{state,jdbcType=TIMESTAMP},
+      insert_time = #{insertTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      week_index = #{weekIndex,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getPbListByDate" parameterType="date" resultMap="zb">
+    select *
+    from yzzb_duty_zb zb
+    left join yzzb_zb_r_user r
+      on zb.id=r.zb_id
+    left join  user
+      on r.user_id=user.id
+    where zb.state=1
+      and zb.date &gt;= #{date}
+      and zb.date &lt;=#{date}+1
+  </select>
+</mapper>

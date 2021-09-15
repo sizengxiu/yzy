@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.dao.FileScanLogDao">
+  <resultMap id="BaseResultMap" type="com.yzy.model.FileScanLog">
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="MD5" jdbcType="CHAR" property="md5" />
+    <result column="SCAN_TIME" jdbcType="TIMESTAMP" property="scanTime" />
+    <result column="FILE_PATH" jdbcType="VARCHAR" property="filePath" />
+    <result column="ILLEGAL_WORD" jdbcType="VARCHAR" property="illegalWord" />
+  </resultMap>
+  <insert id="insert" parameterType="com.yzy.model.FileScanLog">
+    insert into FILE_SCAN_LOG (ID, MD5, SCAN_TIME, 
+      FILE_PATH, ILLEGAL_WORD)
+    values (#{id,jdbcType=DECIMAL}, #{md5,jdbcType=CHAR}, #{scanTime,jdbcType=TIMESTAMP}, 
+      #{filePath,jdbcType=VARCHAR}, #{illegalWord,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yzy.model.FileScanLog">
+    insert into FILE_SCAN_LOG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="md5 != null">
+        MD5,
+      </if>
+      <if test="scanTime != null">
+        SCAN_TIME,
+      </if>
+      <if test="filePath != null">
+        FILE_PATH,
+      </if>
+      <if test="illegalWord != null">
+        ILLEGAL_WORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="md5 != null">
+        #{md5,jdbcType=CHAR},
+      </if>
+      <if test="scanTime != null">
+        #{scanTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="filePath != null">
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="illegalWord != null">
+        #{illegalWord,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <insert id="insertByBatch1" parameterType="java.util.List" useGeneratedKeys="false">
+    INSERT ALL
+    <foreach item="item" index="index" collection="list">
+      insert into FILE_SCAN_LOG ( MD5, SCAN_TIME,
+      FILE_PATH, ILLEGAL_WORD)
+      values ( #{item.md5,jdbcType=CHAR}, #{item.scanTime,jdbcType=TIMESTAMP},
+      #{item.filePath,jdbcType=VARCHAR}, #{item.illegalWord,jdbcType=VARCHAR})
+    </foreach>
+    SELECT 1 FROM DUAL
+  </insert>
+  <insert id="insertByBatch" parameterType="java.util.List" useGeneratedKeys="false">
+      insert into FILE_SCAN_LOG ( MD5, SCAN_TIME,
+      FILE_PATH, ILLEGAL_WORD)
+      select  * from
+      <foreach collection="list" item="item" separator="union all" open="(" close=")">
+        select
+        #{item.md5,jdbcType=VARCHAR} as md5,
+        #{item.scanTime,jdbcType=TIMESTAMP} as scanTime,
+        #{item.filePath,jdbcType=VARCHAR} as filePath,
+        #{item.illegalWord,jdbcType=VARCHAR} as illegalWord
+        from dual
+      </foreach>
+
+  </insert>
+</mapper>

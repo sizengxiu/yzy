@@ -1,0 +1,1 @@
+{"device":{"code":"123","dataTime":"2020-11-05 21:00:21","diskSerial":"CE2F-63AD","macAddr":"74-F0-6D-55-04-DF","responsePerson":"现在","secretLevel":1,"useScope":1},"list":[{"filePath":"D:\\BaiduNetdiskDownload\\机密.txt","illegalWord":"机密"}]}$$$$

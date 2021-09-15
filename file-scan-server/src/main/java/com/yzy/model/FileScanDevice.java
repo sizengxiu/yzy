@@ -57,9 +57,28 @@ public class FileScanDevice implements Serializable {
 
     private String code;
 
+    /**
+     * 操作系统名字
+     */
+    private String os;
+    /**
+     * 扫描的文件总数
+     */
+    private Integer allFileCount;
+    /**
+     * 非法的文件数量
+     */
+    private Integer illegalFileCount;
+    /**
+     * 扫描耗时
+     */
+    private Double consumeTime;
+
 
 
     private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;
@@ -132,4 +151,38 @@ public class FileScanDevice implements Serializable {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public Integer getAllFileCount() {
+        return allFileCount;
+    }
+
+    public void setAllFileCount(Integer allFileCount) {
+        this.allFileCount = allFileCount;
+    }
+
+    public Integer getIllegalFileCount() {
+        return illegalFileCount;
+    }
+
+    public void setIllegalFileCount(Integer illegalFileCount) {
+        this.illegalFileCount = illegalFileCount;
+    }
+
+    public Double getConsumeTime() {
+        return consumeTime;
+    }
+
+    public void setConsumeTime(Double consumeTime) {
+        this.consumeTime = consumeTime;
+    }
+
+
 }

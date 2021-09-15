@@ -1,0 +1,16 @@
+2021-05-18 21:29:04.655 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:31:16.168 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:33:45.438 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:35:44.101 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:36:08.254 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:38:47.525 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:39:33.626 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:40:10.142 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:41:44.187 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:42:52.014 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:43:11.180 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:47:28.740 [background-preinit] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+2021-05-18 21:47:28.859 [main] DEBUG com.yzy.YzzbApp - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2021-05-18 21:47:35.778 [http-nio-8080-exec-3] DEBUG com.yzy.dao.YzzbDutyHistoryDao.getPublishDataCountByDate - ==>  Preparing: select count(id) from yzzb_duty_history where state='1' and date >= ? and date <= ? 
+2021-05-18 21:47:35.801 [http-nio-8080-exec-3] DEBUG com.yzy.dao.YzzbDutyHistoryDao.getPublishDataCountByDate - ==> Parameters: 2021-02-01 21:47:35.123(Timestamp), 2021-01-31 21:47:35.123(Timestamp)
+2021-05-18 21:47:35.842 [http-nio-8080-exec-3] DEBUG com.yzy.dao.YzzbDutyHistoryDao.getPublishDataCountByDate - <==      Total: 1

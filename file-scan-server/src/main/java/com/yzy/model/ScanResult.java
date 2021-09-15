@@ -7,14 +7,14 @@ import java.util.List;
  * @date 2020/11/4 21:47
  */
 public class ScanResult {
-    private FileScanDevice device;
+    private FileScanDeviceDO device;
     private List<FileScanLog> list;
 
-    public FileScanDevice getDevice() {
+    public FileScanDeviceDO getDevice() {
         return device;
     }
 
-    public void setDevice(FileScanDevice device) {
+    public void setDevice(FileScanDeviceDO device) {
         this.device = device;
     }
 

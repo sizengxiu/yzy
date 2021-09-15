@@ -1,0 +1,16 @@
+2021-01-31 18:28:18.613 [main] INFO  com.yzy.App - Starting App on USER-20190128FA with PID 8648 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-01-31 18:28:18.617 [main] INFO  com.yzy.App - No active profile set, falling back to default profiles: default
+2021-01-31 18:28:19.594 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-31 18:29:17.882 [main] INFO  com.yzy.App - Starting App on USER-20190128FA with PID 9328 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-01-31 18:29:17.905 [main] INFO  com.yzy.App - No active profile set, falling back to default profiles: default
+2021-01-31 18:29:19.082 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-31 18:33:51.109 [main] INFO  com.yzy.App - Starting App on USER-20190128FA with PID 6620 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-01-31 18:33:51.113 [main] INFO  com.yzy.App - No active profile set, falling back to default profiles: default
+2021-01-31 18:33:52.779 [main] INFO  com.yzy.App - Started App in 2.462 seconds (JVM running for 3.294)
+2021-01-31 18:43:27.471 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 9588 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-01-31 18:43:27.475 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-01-31 18:43:29.057 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 2.293 seconds (JVM running for 3.162)

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.dao.YzzbDutyCandidateDao">
+  <resultMap id="BaseResultMap" type="com.yzy.model.YzzbDutyCandidate">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="employee_id" jdbcType="INTEGER" property="employeeId" />
+    <result column="current_index_week" jdbcType="INTEGER" property="currentIndexWeek" />
+    <result column="last_index_week" jdbcType="INTEGER" property="lastIndexWeek" />
+    <result column="current_duty_date" jdbcType="DATE" property="currentDutyDate" />
+    <result column="last_duty_date" jdbcType="DATE" property="lastDutyDate" />
+    <result column="attend_duty" jdbcType="INTEGER" property="attendDuty" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="user_state" jdbcType="INTEGER" property="userState" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+  </resultMap>
+  <resultMap id="candidateVo" type="com.yzy.model.YzzbDutyCandidateVo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="employee_id" jdbcType="INTEGER" property="employeeId" />
+    <result column="current_index_week" jdbcType="INTEGER" property="currentIndexWeek" />
+    <result column="last_index_week" jdbcType="INTEGER" property="lastIndexWeek" />
+    <result column="current_duty_date" jdbcType="DATE" property="currentDutyDate" />
+    <result column="last_duty_date" jdbcType="DATE" property="lastDutyDate" />
+    <result column="attend_duty" jdbcType="INTEGER" property="attendDuty" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="user_state" jdbcType="INTEGER" property="userState" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="groupid" jdbcType="INTEGER" property="groupId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, employee_id, current_index_week, last_index_week, current_duty_date, last_duty_date, 
+    attend_duty, weight, user_state, create_time, update_time, `state`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yzzb_duty_candidate
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yzzb_duty_candidate
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyCandidate" useGeneratedKeys="true">
+    insert into yzzb_duty_candidate (employee_id, current_index_week, last_index_week, 
+      current_duty_date, last_duty_date, attend_duty, 
+      weight, user_state, create_time, 
+      update_time, `state`)
+    values (#{employeeId,jdbcType=INTEGER}, #{currentIndexWeek,jdbcType=INTEGER}, #{lastIndexWeek,jdbcType=INTEGER}, 
+      #{currentDutyDate,jdbcType=DATE}, #{lastDutyDate,jdbcType=DATE}, #{attendDuty,jdbcType=INTEGER}, 
+      #{weight,jdbcType=INTEGER}, #{userState,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyCandidate" useGeneratedKeys="true">
+    insert into yzzb_duty_candidate
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="employeeId != null">
+        employee_id,
+      </if>
+      <if test="currentIndexWeek != null">
+        current_index_week,
+      </if>
+      <if test="lastIndexWeek != null">
+        last_index_week,
+      </if>
+      <if test="currentDutyDate != null">
+        current_duty_date,
+      </if>
+      <if test="lastDutyDate != null">
+        last_duty_date,
+      </if>
+      <if test="attendDuty != null">
+        attend_duty,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="userState != null">
+        user_state,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=INTEGER},
+      </if>
+      <if test="currentIndexWeek != null">
+        #{currentIndexWeek,jdbcType=INTEGER},
+      </if>
+      <if test="lastIndexWeek != null">
+        #{lastIndexWeek,jdbcType=INTEGER},
+      </if>
+      <if test="currentDutyDate != null">
+        #{currentDutyDate,jdbcType=DATE},
+      </if>
+      <if test="lastDutyDate != null">
+        #{lastDutyDate,jdbcType=DATE},
+      </if>
+      <if test="attendDuty != null">
+        #{attendDuty,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="userState != null">
+        #{userState,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yzy.model.YzzbDutyCandidate">
+    update yzzb_duty_candidate
+    <set>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=INTEGER},
+      </if>
+      <if test="currentIndexWeek != null">
+        current_index_week = #{currentIndexWeek,jdbcType=INTEGER},
+      </if>
+      <if test="lastIndexWeek != null">
+        last_index_week = #{lastIndexWeek,jdbcType=INTEGER},
+      </if>
+      <if test="currentDutyDate != null">
+        current_duty_date = #{currentDutyDate,jdbcType=DATE},
+      </if>
+      <if test="lastDutyDate != null">
+        last_duty_date = #{lastDutyDate,jdbcType=DATE},
+      </if>
+      <if test="attendDuty != null">
+        attend_duty = #{attendDuty,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="userState != null">
+        user_state = #{userState,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yzy.model.YzzbDutyCandidate">
+    update yzzb_duty_candidate
+    set employee_id = #{employeeId,jdbcType=INTEGER},
+      current_index_week = #{currentIndexWeek,jdbcType=INTEGER},
+      last_index_week = #{lastIndexWeek,jdbcType=INTEGER},
+      current_duty_date = #{currentDutyDate,jdbcType=DATE},
+      last_duty_date = #{lastDutyDate,jdbcType=DATE},
+      attend_duty = #{attendDuty,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=INTEGER},
+      user_state = #{userState,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      `state` = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <insert id="addCandidateByBatch" parameterType="list" >
+    insert into yzzb_duty_candidate (employee_id, current_index_week, last_index_week,
+                                     current_duty_date, last_duty_date, attend_duty,
+                                     weight, user_state, create_time,
+                                     update_time, `state`)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.employeeId,jdbcType=INTEGER}, #{item.currentIndexWeek,jdbcType=INTEGER}, #{item.lastIndexWeek,jdbcType=INTEGER},
+      #{item.currentDutyDate,jdbcType=DATE}, #{item.lastDutyDate,jdbcType=DATE}, #{item.attendDuty,jdbcType=INTEGER},
+      #{item.weight,jdbcType=INTEGER}, #{item.userState,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP},
+      #{item.updateTime,jdbcType=TIMESTAMP}, #{item.state,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <select id="getLeastWeekIndex" resultType="int">
+    select COALESCE(max(current_index_week),1)
+    from ( select current_index_week,count(id) c
+          from yzzb_duty_candidate
+          group by current_index_week
+          order by c asc
+          limit 1
+          ) a
+
+  </select>
+
+  <delete id="deleteAllCandidate">
+    delete from yzzb_duty_candidate
+  </delete>
+
+  <select id="getCandidateList" parameterType="map" resultMap="candidateVo">
+    select ydc.*,g.groupid,user.name userName,user.phone ,user.sex from yzzb_duty_candidate ydc
+    left join yzzb_duty_group_user g
+    on ydc.id=g.userid and g.state=1
+    left join user on ydc.employee_id=user.id
+    where ydc.attend_duty=1
+      and user.state=1
+      and ydc.user_state=1
+    order by current_index_week asc ,last_duty_date asc
+  </select>
+
+  <select id="getUserCountGroupByWeekIndex" resultType="com.yzy.model.UserCountVo">
+    select current_index_week weekIndex,sum(1) userCount from yzzb_duty_candidate
+    where state=1 and attend_duty=1
+    group by current_index_week
+    order by userCount asc
+  </select>
+
+</mapper>

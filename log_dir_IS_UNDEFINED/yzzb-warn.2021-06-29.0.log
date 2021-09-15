@@ -1,0 +1,7 @@
+2021-06-29 22:06:30.114 [http-nio-8080-exec-9] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1863524b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-29 22:06:35.118 [http-nio-8080-exec-9] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@605ed6f8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-06-29 22:09:46.245 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m12s870ms703µs2ns).
+2021-06-29 22:12:44.577 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s306ms326µs331ns).
+2021-06-29 22:16:59.523 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m14s86ms320µs411ns).
+2021-06-29 22:18:22.592 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m23s66ms649µs60ns).
+2021-06-29 22:19:28.172 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s577ms573µs618ns).

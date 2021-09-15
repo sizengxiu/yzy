@@ -1,0 +1,342 @@
+2021-05-30 10:49:28.935 [http-nio-8080-exec-1] INFO  com.yzy.controller.YzzbLoginController - #1,#2
+2021-05-30 10:50:26.446 [http-nio-8080-exec-6] INFO  com.yzy.controller.YzzbLoginController - #1,#1
+2021-05-30 10:51:40.063 [http-nio-8080-exec-1] INFO  com.yzy.controller.YzzbLoginController - 1,1
+2021-05-30 10:51:43.224 [http-nio-8080-exec-6] INFO  com.yzy.controller.YzzbLoginController - ,
+2021-05-30 10:51:44.030 [http-nio-8080-exec-10] INFO  com.yzy.controller.YzzbLoginController - ,
+2021-05-30 10:51:47.351 [http-nio-8080-exec-2] INFO  com.yzy.controller.YzzbLoginController - 1,1
+2021-05-30 10:52:43.919 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 8136 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 10:52:43.920 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 10:52:45.424 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 10:52:45.445 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 10:52:45.459 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 10:52:45.460 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 10:52:45.470 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 10:52:45.693 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 10:52:45.693 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1695 ms
+2021-05-30 10:52:46.755 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 10:52:46.845 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 10:52:46.849 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-05-30 10:53:26.273 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 3088 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 10:53:26.274 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 10:53:28.226 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 10:53:28.265 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 10:53:28.276 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 10:53:28.277 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 10:53:28.293 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 10:53:28.845 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 10:53:28.845 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2503 ms
+2021-05-30 10:53:29.518 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 10:53:29.826 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 10:53:29.856 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 10:53:29.861 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.734 seconds (JVM running for 5.73)
+2021-05-30 10:53:38.964 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 10:53:38.964 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 10:53:38.972 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2021-05-30 10:53:43.092 [http-nio-8080-exec-5] INFO  com.yzy.controller.YzzbLoginController - 1,1
+2021-05-30 15:16:17.356 [http-nio-8080-exec-4] INFO  com.yzy.controller.YzzbLoginController - 1,1
+2021-05-30 15:17:26.743 [http-nio-8080-exec-5] INFO  com.yzy.controller.YzzbLoginController - 1,
+2021-05-30 22:30:18.974 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 9112 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 22:30:18.975 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 22:30:20.391 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 22:30:20.412 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:30:20.422 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 22:30:20.422 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 22:30:20.430 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 22:30:20.586 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 22:30:20.586 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1503 ms
+2021-05-30 22:30:21.582 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 22:30:21.898 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:30:21.942 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 22:30:21.946 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 3.997 seconds (JVM running for 5.005)
+2021-05-30 22:30:30.924 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 22:30:30.925 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 22:30:30.930 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-05-30 22:30:30.976 [http-nio-8080-exec-2] INFO  com.yzy.controller.YzzbLoginController - ,1
+2021-05-30 22:31:35.768 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 7424 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 22:31:35.769 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 22:31:37.339 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 22:31:37.356 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:31:37.365 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 22:31:37.365 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 22:31:37.375 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 22:31:37.713 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 22:31:37.714 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1758 ms
+2021-05-30 22:31:39.182 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 22:31:39.566 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:31:39.596 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 22:31:39.600 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.947 seconds (JVM running for 5.991)
+2021-05-30 22:31:46.075 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 22:31:46.076 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 22:31:46.085 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2021-05-30 22:31:46.211 [http-nio-8080-exec-1] INFO  com.yzy.controller.YzzbLoginController - ,
+2021-05-30 22:32:00.020 [http-nio-8080-exec-2] INFO  com.yzy.controller.YzzbLoginController - ,
+2021-05-30 22:32:45.033 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 9428 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 22:32:45.034 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 22:32:46.559 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 22:32:46.574 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:32:46.584 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 22:32:46.584 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 22:32:46.591 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 22:32:46.746 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 22:32:46.746 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1454 ms
+2021-05-30 22:32:47.696 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 22:32:48.002 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:32:48.031 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 22:32:48.036 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 3.931 seconds (JVM running for 4.949)
+2021-05-30 22:33:13.979 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 22:33:13.980 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 22:33:13.990 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2021-05-30 22:40:00.847 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 7832 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 22:40:00.850 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 22:40:02.240 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 22:40:02.256 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:40:02.264 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 22:40:02.265 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 22:40:02.272 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 22:40:02.482 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 22:40:02.482 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1569 ms
+2021-05-30 22:40:03.744 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 22:40:03.975 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 22:40:03.999 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 22:40:04.002 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.138 seconds (JVM running for 5.142)
+2021-05-30 22:40:08.860 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 22:40:08.860 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 22:40:08.868 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2021-05-30 22:41:46.872 [http-nio-8080-exec-3] INFO  com.yzy.controller.YzzbLoginController - ,1
+2021-05-30 23:00:48.638 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 8760 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:00:48.639 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:00:50.146 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:00:50.168 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:00:50.180 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:00:50.181 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:00:50.191 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:00:50.396 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:00:50.397 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1706 ms
+2021-05-30 23:00:51.308 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:00:51.504 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:00:51.558 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:00:51.563 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.001 seconds (JVM running for 5.137)
+2021-05-30 23:01:06.848 [http-nio-8080-exec-3] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:01:06.849 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:01:06.859 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2021-05-30 23:03:49.786 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 8008 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:03:49.787 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:03:51.257 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:03:51.310 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:03:51.345 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:03:51.346 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:03:51.357 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:03:51.662 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:03:51.663 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1820 ms
+2021-05-30 23:03:52.463 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:03:52.665 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:03:52.695 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:03:52.698 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.126 seconds (JVM running for 5.197)
+2021-05-30 23:04:00.843 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:04:00.843 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:04:00.850 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2021-05-30 23:06:01.267 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 8692 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:06:01.301 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:06:02.857 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:06:02.877 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:06:02.888 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:06:02.888 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:06:02.896 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:06:03.050 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:06:03.050 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1646 ms
+2021-05-30 23:06:03.857 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:06:04.259 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:06:04.297 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:06:04.302 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 3.893 seconds (JVM running for 4.934)
+2021-05-30 23:06:19.798 [http-nio-8080-exec-4] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:06:19.798 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:06:19.804 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-05-30 23:11:44.450 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 10144 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:11:44.451 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:11:45.844 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:11:45.862 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:11:45.883 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:11:45.884 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:11:45.895 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:11:46.118 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:11:46.119 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1614 ms
+2021-05-30 23:11:47.145 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:11:47.386 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:11:47.408 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:11:47.411 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.321 seconds (JVM running for 5.301)
+2021-05-30 23:11:53.362 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:11:53.363 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:11:53.372 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2021-05-30 23:12:37.175 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 7764 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:12:37.176 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:12:38.670 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:12:38.689 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:12:38.701 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:12:38.702 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:12:38.731 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:12:38.957 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:12:38.957 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1660 ms
+2021-05-30 23:12:39.935 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:12:40.167 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:12:40.190 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:12:40.193 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.016 seconds (JVM running for 5.029)
+2021-05-30 23:12:44.191 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:12:44.191 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:12:44.204 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2021-05-30 23:13:07.917 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 9384 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:13:07.922 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:13:09.399 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:13:09.422 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:13:09.451 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:13:09.451 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:13:09.459 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:13:09.662 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:13:09.663 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1678 ms
+2021-05-30 23:13:10.501 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:13:10.733 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:13:10.756 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:13:10.760 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.018 seconds (JVM running for 5.0)
+2021-05-30 23:13:33.972 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:13:33.972 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:13:33.980 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2021-05-30 23:17:57.377 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 9904 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:17:57.379 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:17:58.849 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:17:58.873 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:17:58.888 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:17:58.889 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:17:58.897 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:17:59.079 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:17:59.080 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1646 ms
+2021-05-30 23:18:00.053 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:18:00.455 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:18:00.523 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:18:00.527 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.453 seconds (JVM running for 5.405)
+2021-05-30 23:18:05.571 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:18:05.571 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:18:05.578 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2021-05-30 23:20:20.541 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 8644 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:20:20.543 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:20:22.432 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:20:22.448 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:20:22.459 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:20:22.459 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:20:22.469 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:20:22.617 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:20:22.618 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2002 ms
+2021-05-30 23:20:23.838 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:20:24.144 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:20:24.173 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:20:24.177 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.599 seconds (JVM running for 5.561)
+2021-05-30 23:20:53.258 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:20:53.267 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:20:53.292 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2021-05-30 23:21:29.957 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 10976 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:21:29.958 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:21:31.595 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:21:31.611 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:21:31.620 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:21:31.621 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:21:31.627 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:21:31.773 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:21:31.774 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1673 ms
+2021-05-30 23:21:32.775 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:21:33.007 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:21:33.032 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:21:33.036 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.005 seconds (JVM running for 5.025)
+2021-05-30 23:21:36.989 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:21:36.990 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:21:36.998 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2021-05-30 23:25:39.509 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 1324 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:25:39.510 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:25:41.302 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:25:41.316 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:25:41.324 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:25:41.324 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:25:41.330 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:25:41.450 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:25:41.450 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1883 ms
+2021-05-30 23:25:42.310 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:25:42.576 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:25:42.610 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:25:42.614 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.345 seconds (JVM running for 5.462)
+2021-05-30 23:25:42.779 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:25:42.779 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:25:42.804 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 25 ms
+2021-05-30 23:31:09.736 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 10948 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:31:09.737 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:31:11.547 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:31:11.565 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:31:11.575 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:31:11.575 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:31:11.582 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:31:11.759 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:31:11.760 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1893 ms
+2021-05-30 23:31:12.739 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:31:13.176 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:31:13.203 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:31:13.207 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.36 seconds (JVM running for 5.392)
+2021-05-30 23:31:20.777 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:31:20.778 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:31:20.788 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2021-05-30 23:37:34.191 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 10348 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:37:34.192 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:37:35.626 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:37:35.639 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:37:35.646 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:37:35.646 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:37:35.652 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:37:35.764 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:37:35.764 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1504 ms
+2021-05-30 23:37:36.321 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:37:36.522 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:37:36.555 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:37:36.558 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 3.377 seconds (JVM running for 4.335)
+2021-05-30 23:39:06.042 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 11036 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:39:06.043 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:39:08.273 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:39:08.295 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:39:08.308 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:39:08.309 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:39:08.318 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:39:08.485 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:39:08.486 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2377 ms
+2021-05-30 23:39:09.696 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:39:09.972 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:39:09.997 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:39:10.000 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.882 seconds (JVM running for 5.859)
+2021-05-30 23:39:17.908 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:39:17.909 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:39:17.926 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2021-05-30 23:40:27.813 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 7704 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:40:27.814 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:40:29.583 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:40:29.598 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:40:29.606 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:40:29.607 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:40:29.613 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:40:29.782 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:40:29.782 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1893 ms
+2021-05-30 23:40:30.933 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:40:31.245 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:40:31.278 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:40:31.285 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 4.475 seconds (JVM running for 5.434)
+2021-05-30 23:40:54.934 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:40:54.935 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:40:54.945 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2021-05-30 23:42:22.894 [main] INFO  com.yzy.YzzbApp - Starting YzzbApp on USER-20190128FA with PID 10956 (D:\workspace\myeclipse2018\yzy\yzzb\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2021-05-30 23:42:22.896 [main] INFO  com.yzy.YzzbApp - No active profile set, falling back to default profiles: default
+2021-05-30 23:42:24.459 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-30 23:42:24.475 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:42:24.486 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-30 23:42:24.486 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-05-30 23:42:24.495 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2021-05-30 23:42:24.630 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring embedded WebApplicationContext
+2021-05-30 23:42:24.630 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1536 ms
+2021-05-30 23:42:25.609 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 23:42:25.950 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-30 23:42:25.973 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/yzzb'
+2021-05-30 23:42:25.977 [main] INFO  com.yzy.YzzbApp - Started YzzbApp in 3.926 seconds (JVM running for 4.896)
+2021-05-30 23:42:41.478 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/yzzb] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-30 23:42:41.479 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-30 23:42:41.487 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms

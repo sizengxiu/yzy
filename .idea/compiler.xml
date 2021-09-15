@@ -9,6 +9,8 @@
         <module name="common" />
         <module name="file-scan" />
         <module name="file-scan-server" />
+        <module name="test-war" />
+        <module name="yzzb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +23,8 @@
       <module name="file-scan" options="-parameters" />
       <module name="file-scan-client" options="-parameters" />
       <module name="file-scan-server" options="-parameters" />
+      <module name="test-war" options="-parameters" />
+      <module name="yzzb" options="-parameters" />
     </option>
   </component>
 </project>

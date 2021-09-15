@@ -1,5 +1,6 @@
 package com.yzy.util;
 
+import com.yzy.config.ConstantParam;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
@@ -27,14 +28,44 @@ public class FileUtil {
      * @date: 2020/11/1 11:26
      */
     public static Properties getPropertis(String path) {
+        try {
+            String outpath = System.getProperty("user.dir")+File.separator;//先读取config目录的，没有再加载classpath的
+            log.info("文件绝对路径：{}",outpath);
+            Properties properties = new Properties();
+            InputStream in = new FileInputStream(new File(outpath + path));
+            properties.load(new InputStreamReader(in, "utf-8"));
+            return properties;
+        } catch (IOException e) {
+            log.info("文件读取失败，尝试重新读取");
+            try {
+                Properties properties = new Properties();
+                InputStream in = FileUtil.class.getClassLoader().getResourceAsStream(path);//默认加载classpath的
+                properties.load(new InputStreamReader(in, "utf-8"));
+                return properties;
+            } catch (IOException es) {
+                log.error("文件读取失败！",es.getMessage());
+                return null;
+            }
+        }
 
-        Properties prop = new Properties();
+/*        Properties prop = new Properties();
         try (InputStream inputStream = FileUtil.class.getClassLoader().getResourceAsStream(path)) {
             prop.load(new InputStreamReader(inputStream, "utf-8"));
         } catch (IOException e) {
             log.error("配置文件读取异常", e);
         }
-        return prop;
+        return prop;*/
+    }
+
+    /**
+     * 读取当前目录下的配置文件
+     * @param path
+     * @return
+     */
+    public static Properties getPropertisInCurrentDir(String path){
+//        path= ConstantParam.CURRENT_DIR+File.separator+path;
+        log.info(path);
+        return getPropertis(path);
     }
 
     public static void updateProperties(Properties prop,String path){

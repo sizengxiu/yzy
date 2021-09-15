@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排班</title>
+    <link href="/yzzb/common/bootstrap-4.6.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/yzzb/common/jquery-easyui-1.9.8/themes/default/easyui.css">
+    <script type="text/javascript" src="/yzzb/common/jquery-3.4.1.min.js"></script>
+    <script src="../../common/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"  src="/yzzb/common/jquery-easyui-1.9.8/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/yzzb/common/layer/layer.js"></script>
+    <script type="text/javascript" src="../js/paiban.js"></script>
+    <style>
+        .datagrid-row {
+            height: 42px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6 ">
+        <div class="form-inline">
+            <input id="yearCom" class="easyui-combobox"  ></button>
+            <input id="monthCom" class="easyui-combobox"  ></button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" >
+                 查看排班
+            </button>
+            &nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paibanModal">
+                 开始排班
+            </button>
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <table  id="paiban-view-table" >
+        </table>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<div class="modal fade" id="paibanModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">预排班结果</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table  id="paiban-view-modal-table" >
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="addEmployeeByBatch(this)">发布排班结果</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

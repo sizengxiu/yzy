@@ -33,6 +33,8 @@ public class FileScanLog implements Serializable {
      */
     private String illegalWord;
 
+
+
     private static final long serialVersionUID = 1L;
 
 

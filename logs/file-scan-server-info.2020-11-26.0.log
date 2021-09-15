@@ -1,0 +1,110 @@
+2020-11-26 23:18:34.800 [main] INFO  com.yzy.FileScanServerApplication - Starting FileScanServerApplication on USER-20190128FA with PID 1492 (D:\workspace\myeclipse2018\yzy\file-scan-server\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2020-11-26 23:18:34.805 [main] INFO  com.yzy.FileScanServerApplication - No active profile set, falling back to default profiles: default
+2020-11-26 23:18:36.532 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-26 23:18:36.549 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:18:36.561 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-26 23:18:36.561 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-26 23:18:36.567 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2020-11-26 23:18:36.693 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring embedded WebApplicationContext
+2020-11-26 23:18:36.694 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1749 ms
+2020-11-26 23:18:37.361 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:18:37.628 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:18:38.906 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path '/fileScanServer'
+2020-11-26 23:18:38.909 [main] INFO  com.yzy.FileScanServerApplication - Started FileScanServerApplication in 4.806 seconds (JVM running for 5.57)
+2020-11-26 23:24:26.999 [main] INFO  com.yzy.FileScanServerApplication - Starting FileScanServerApplication on USER-20190128FA with PID 15048 (D:\workspace\myeclipse2018\yzy\file-scan-server\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2020-11-26 23:24:27.002 [main] INFO  com.yzy.FileScanServerApplication - No active profile set, falling back to default profiles: default
+2020-11-26 23:24:28.583 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-26 23:24:28.600 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:24:28.609 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-26 23:24:28.609 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-26 23:24:28.616 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2020-11-26 23:24:28.775 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring embedded WebApplicationContext
+2020-11-26 23:24:28.776 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1696 ms
+2020-11-26 23:24:29.429 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:24:29.820 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:24:30.445 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:24:30.446 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-11-26 23:24:30.451 [main] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2020-11-26 23:24:30.452 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:24:30.452 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:24:30.455 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-26 23:24:30.464 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:25:18.899 [main] INFO  com.yzy.FileScanServerApplication - Starting FileScanServerApplication on USER-20190128FA with PID 14736 (D:\workspace\myeclipse2018\yzy\file-scan-server\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2020-11-26 23:25:18.907 [main] INFO  com.yzy.FileScanServerApplication - No active profile set, falling back to default profiles: default
+2020-11-26 23:25:20.690 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-26 23:25:20.710 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:25:20.726 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-26 23:25:20.727 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-26 23:25:20.734 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2020-11-26 23:25:20.889 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring embedded WebApplicationContext
+2020-11-26 23:25:20.889 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1923 ms
+2020-11-26 23:25:21.613 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:25:21.822 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:25:22.194 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:25:22.194 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-11-26 23:25:22.200 [main] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2020-11-26 23:25:22.201 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:25:22.201 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:25:22.204 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-26 23:25:22.211 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:26:00.535 [main] INFO  com.yzy.FileScanServerApplication - Starting FileScanServerApplication on USER-20190128FA with PID 13464 (D:\workspace\myeclipse2018\yzy\file-scan-server\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2020-11-26 23:26:00.539 [main] INFO  com.yzy.FileScanServerApplication - No active profile set, falling back to default profiles: default
+2020-11-26 23:26:01.800 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-26 23:26:01.814 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:26:01.826 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-26 23:26:01.826 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-26 23:26:01.832 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2020-11-26 23:26:02.023 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring embedded WebApplicationContext
+2020-11-26 23:26:02.023 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1430 ms
+2020-11-26 23:26:02.607 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:26:02.803 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:26:03.828 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path '/fileScanServer'
+2020-11-26 23:26:03.832 [main] INFO  com.yzy.FileScanServerApplication - Started FileScanServerApplication in 4.246 seconds (JVM running for 5.101)
+2020-11-26 23:27:07.394 [main] INFO  com.yzy.FileScanServerApplication - Starting FileScanServerApplication on USER-20190128FA with PID 13972 (D:\workspace\myeclipse2018\yzy\file-scan-server\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2020-11-26 23:27:07.398 [main] INFO  com.yzy.FileScanServerApplication - No active profile set, falling back to default profiles: default
+2020-11-26 23:27:08.889 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-26 23:27:08.904 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:27:08.916 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-26 23:27:08.916 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-26 23:27:08.922 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2020-11-26 23:27:09.085 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring embedded WebApplicationContext
+2020-11-26 23:27:09.085 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1611 ms
+2020-11-26 23:27:09.779 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:27:10.110 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:27:10.695 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:27:10.695 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-11-26 23:27:10.701 [main] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2020-11-26 23:27:10.701 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:27:10.701 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:27:10.704 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-26 23:27:10.711 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:30:13.929 [main] INFO  com.yzy.FileScanServerApplication - Starting FileScanServerApplication on USER-20190128FA with PID 10500 (D:\workspace\myeclipse2018\yzy\file-scan-server\target\classes started by Administrator in D:\workspace\myeclipse2018\yzy)
+2020-11-26 23:30:13.932 [main] INFO  com.yzy.FileScanServerApplication - No active profile set, falling back to default profiles: default
+2020-11-26 23:30:16.029 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (https)
+2020-11-26 23:30:16.052 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:30:16.065 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-26 23:30:16.065 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-26 23:30:16.070 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\soft\ideaIU-2018.3.win\plugins\maven\lib\maven3\bin;D:\soft\mysql-5.7.23-winx64\bin;D:\soft\gradle-4.6\bin;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Users\Administrator\PycharmProjects\pythonProject\venv\Scripts;D:\Program Files\python\Scripts\;D:\Program Files\python\;D:\Program Files\Fiddler;C:\Users\Administrator\AppData\Roaming\npm;.]
+2020-11-26 23:30:16.223 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring embedded WebApplicationContext
+2020-11-26 23:30:16.223 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2231 ms
+2020-11-26 23:30:17.355 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-26 23:30:17.617 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8080"]
+2020-11-26 23:30:18.209 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (https) with context path '/fileScanServer'
+2020-11-26 23:30:18.213 [main] INFO  com.yzy.FileScanServerApplication - Started FileScanServerApplication in 4.839 seconds (JVM running for 5.636)
+2020-11-26 23:30:27.350 [https-jsse-nio-8080-exec-4] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/fileScanServer] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-26 23:30:27.350 [https-jsse-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-26 23:30:27.357 [https-jsse-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-11-26 23:30:27.514 [https-jsse-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:30:49.723 [https-jsse-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:31:23.414 [https-jsse-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:31:45.553 [https-jsse-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:32:07.561 [https-jsse-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:32:29.731 [https-jsse-nio-8080-exec-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:32:59.586 [https-jsse-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-11-26 23:33:21.736 [https-jsse-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...

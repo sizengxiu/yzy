@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /yzzb
+spring:
+  application:
+    name: yzzb
+  servlet:
+    multipart:
+      max-file-size: 2MB
+  datasource:
+    username: root
+    password: liyi@123
+    url: jdbc:mysql://1.15.101.117:3306/yzyxxh
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapping/*.xml

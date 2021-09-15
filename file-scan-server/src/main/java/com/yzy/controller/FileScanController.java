@@ -1,10 +1,7 @@
 package com.yzy.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yzy.model.FileScanDevice;
-import com.yzy.model.IllegalFileInfo;
-import com.yzy.model.Result;
-import com.yzy.model.ScanResult;
+import com.yzy.model.*;
 import com.yzy.service.FileScanService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +26,16 @@ public class FileScanController {
         scanService.saveScanResult(scanResult);
         return Result.getSuccessResult();
     }
+    @RequestMapping("test")
+    public Result test(int t){
+        log.info("sd:",t);
+        return Result.getSuccessResult();
+    }
+    @RequestMapping("test1")
+    public Result test1(@RequestBody BlackIp blackIp){
+        log.info("sd:",blackIp);
+        return Result.getSuccessResult();
+    }
+
 
 }

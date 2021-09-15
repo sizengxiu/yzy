@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>file-scan</artifactId>
+    <artifactId>file-scan-client</artifactId>
 
     <name>file-scan-client</name>
     <!-- FIXME change it to the project's website -->

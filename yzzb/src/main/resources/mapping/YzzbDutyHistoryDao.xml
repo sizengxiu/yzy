@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.dao.YzzbDutyHistoryDao">
+  <resultMap id="BaseResultMap" type="com.yzy.model.YzzbDutyHistory">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="index_week" jdbcType="INTEGER" property="indexWeek" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="employee_a" jdbcType="INTEGER" property="employeeA" />
+    <result column="employee_b" jdbcType="INTEGER" property="employeeB" />
+    <result column="employee_c" jdbcType="INTEGER" property="employeeC" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, index_week, `date`, employee_a, employee_b, employee_c, `state`, publish_time, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yzzb_duty_history
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yzzb_duty_history
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyHistory" useGeneratedKeys="true">
+    insert into yzzb_duty_history (index_week, `date`, employee_a, 
+      employee_b, employee_c, `state`, 
+      publish_time, create_time, update_time
+      )
+    values (#{indexWeek,jdbcType=INTEGER}, #{date,jdbcType=DATE}, #{employeeA,jdbcType=INTEGER}, 
+      #{employeeB,jdbcType=INTEGER}, #{employeeC,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, 
+      #{publishTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyHistory" useGeneratedKeys="true">
+    insert into yzzb_duty_history
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="indexWeek != null">
+        index_week,
+      </if>
+      <if test="date != null">
+        `date`,
+      </if>
+      <if test="employeeA != null">
+        employee_a,
+      </if>
+      <if test="employeeB != null">
+        employee_b,
+      </if>
+      <if test="employeeC != null">
+        employee_c,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="indexWeek != null">
+        #{indexWeek,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="employeeA != null">
+        #{employeeA,jdbcType=INTEGER},
+      </if>
+      <if test="employeeB != null">
+        #{employeeB,jdbcType=INTEGER},
+      </if>
+      <if test="employeeC != null">
+        #{employeeC,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yzy.model.YzzbDutyHistory">
+    update yzzb_duty_history
+    <set>
+      <if test="indexWeek != null">
+        index_week = #{indexWeek,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        `date` = #{date,jdbcType=DATE},
+      </if>
+      <if test="employeeA != null">
+        employee_a = #{employeeA,jdbcType=INTEGER},
+      </if>
+      <if test="employeeB != null">
+        employee_b = #{employeeB,jdbcType=INTEGER},
+      </if>
+      <if test="employeeC != null">
+        employee_c = #{employeeC,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="publishTime != null">
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yzy.model.YzzbDutyHistory">
+    update yzzb_duty_history
+    set index_week = #{indexWeek,jdbcType=INTEGER},
+      `date` = #{date,jdbcType=DATE},
+      employee_a = #{employeeA,jdbcType=INTEGER},
+      employee_b = #{employeeB,jdbcType=INTEGER},
+      employee_c = #{employeeC,jdbcType=INTEGER},
+      `state` = #{state,jdbcType=INTEGER},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getPublishDataCountByDate" parameterType="map" resultType="int">
+        select count(id)
+        from yzzb_duty_history
+        where state='1'
+              and date &gt;= #{start}
+              and date &lt;= #{end}
+
+  </select>
+</mapper>

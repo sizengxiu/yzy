@@ -52,7 +52,14 @@ public class MacUtil {
                     return o2.compareTo(o1);
                 }
             });
-            return  macList.get(0);
+             StringBuilder sb=new StringBuilder();
+             for(int i=0,size=macList.size();i<size;i++){
+                 sb.append(macList.get(i));
+                 if(i!=size-1){
+                     sb.append(";");
+                 }
+             }
+            return  sb.toString();
         }
         return null;
     }

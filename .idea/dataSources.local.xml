@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="yzyxxh" uuid="f7e90d61-5785-433a-9661-078b32240658">
+      <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production&#10;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="4.2" driver-name="Oracle JDBC driver" driver-version="12.2.0.1.0" dbms="ORACLE" exact-version="11.2.0.1.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>yzyxxh</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+    <data-source name="yzyxxh-mysql" uuid="078f749d-d124-4935-942e-205883728563">
+      <database-info product="MySQL" version="8.0.16" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="8.0.16">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>yzyxxh</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+    <data-source name="腾讯云1.15.101.117" uuid="4ae87ffd-dfcc-4327-a19e-d3d20a398c2e">
+      <database-info product="MySQL" version="8.0.23" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="8.0.23">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+  </component>
+</project>

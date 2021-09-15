@@ -1,0 +1,13 @@
+2020-11-22 17:34:11.955 [main] DEBUG com.yzy.FileScanServerApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 17:34:45.239 [http-nio-8080-exec-2] DEBUG com.yzy.dao.FileScanWhiteMacDao.isInWhiteMacList - ==>  Preparing: select count(1) from file_scan_white_list where mac=? 
+2020-11-22 17:34:45.292 [http-nio-8080-exec-2] DEBUG com.yzy.dao.FileScanWhiteMacDao.isInWhiteMacList - ==> Parameters: 0A-00-27-00-00-11(String)
+2020-11-22 17:34:45.405 [http-nio-8080-exec-2] DEBUG com.yzy.dao.FileScanWhiteMacDao.isInWhiteMacList - <==      Total: 1
+2020-11-22 17:55:31.055 [main] DEBUG com.yzy.App - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 17:59:01.892 [main] DEBUG com.yzy.App - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 18:00:29.444 [main] DEBUG com.yzy.App - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 18:00:42.252 [main] DEBUG com.yzy.App - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 18:11:02.896 [main] DEBUG com.yzy.App - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 18:20:07.495 [main] DEBUG com.yzy.FileScanServerApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2020-11-22 18:20:14.936 [http-nio-8080-exec-2] DEBUG com.yzy.dao.FileScanWhiteMacDao.isInWhiteMacList - ==>  Preparing: select count(1) from file_scan_white_list where mac=? 
+2020-11-22 18:20:15.003 [http-nio-8080-exec-2] DEBUG com.yzy.dao.FileScanWhiteMacDao.isInWhiteMacList - ==> Parameters: 0A-00-27-00-00-11(String)
+2020-11-22 18:20:15.031 [http-nio-8080-exec-2] DEBUG com.yzy.dao.FileScanWhiteMacDao.isInWhiteMacList - <==      Total: 1

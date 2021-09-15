@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.dao.YzzbDutyGroupUserDao">
+  <resultMap id="BaseResultMap" type="com.yzy.model.YzzbDutyGroupUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="groupid" jdbcType="INTEGER" property="groupid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, groupid, userid, create_time, `state`, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yzzb_duty_group_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yzzb_duty_group_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyGroupUser" useGeneratedKeys="true">
+    insert into yzzb_duty_group_user (groupid, userid, create_time, 
+      `state`, update_time)
+    values (#{groupid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyGroupUser" useGeneratedKeys="true">
+    insert into yzzb_duty_group_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="groupid != null">
+        groupid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="groupid != null">
+        #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yzy.model.YzzbDutyGroupUser">
+    update yzzb_duty_group_user
+    <set>
+      <if test="groupid != null">
+        groupid = #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yzy.model.YzzbDutyGroupUser">
+    update yzzb_duty_group_user
+    set groupid = #{groupid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      `state` = #{state,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getUserGroupList" resultMap="BaseResultMap">
+    select userid,groupid from yzzb_duty_group_user
+    where state=1
+    order by groupid
+  </select>
+</mapper>

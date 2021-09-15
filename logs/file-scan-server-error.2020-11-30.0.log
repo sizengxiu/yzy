@@ -1,0 +1,77 @@
+2020-11-30 23:04:35.138 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:localhost.jks'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.yzy.FileScanServerApplication.main(FileScanServerApplication.java:20)
+Caused by: org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:localhost.jks'
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSsl(SslConnectorCustomizer.java:92)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.customize(SslConnectorCustomizer.java:58)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:317)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:300)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 8 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [localhost.jks] cannot be resolved to URL because it does not exist
+	at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:133)
+	... 15 common frames omitted
+2020-11-30 23:05:59.007 [main] ERROR org.apache.catalina.util.LifecycleBase - Failed to start component [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.yzy.FileScanServerApplication.main(FileScanServerApplication.java:20)
+Caused by: java.lang.IllegalArgumentException: DerInputStream.getLength(): lengthTag=109, too big.
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:114)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:85)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:224)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1171)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.io.IOException: DerInputStream.getLength(): lengthTag=109, too big.
+	at sun.security.util.DerInputStream.getLength(DerInputStream.java:599)
+	at sun.security.util.DerValue.init(DerValue.java:391)
+	at sun.security.util.DerValue.<init>(DerValue.java:332)
+	at sun.security.util.DerValue.<init>(DerValue.java:345)
+	at sun.security.pkcs12.PKCS12KeyStore.engineLoad(PKCS12KeyStore.java:1938)
+	at java.security.KeyStore.load(KeyStore.java:1445)
+	at org.apache.tomcat.util.net.SSLUtilBase.getStore(SSLUtilBase.java:178)
+	at org.apache.tomcat.util.net.SSLHostConfigCertificate.getCertificateKeystore(SSLHostConfigCertificate.java:204)
+	at org.apache.tomcat.util.net.jsse.JSSEUtil.getKeyManagers(JSSEUtil.java:203)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:112)
+	... 20 common frames omitted
+2020-11-30 23:05:59.029 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+

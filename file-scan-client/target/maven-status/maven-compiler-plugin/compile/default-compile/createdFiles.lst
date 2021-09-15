@@ -11,4 +11,7 @@ com\yzy\service\FileScanService$1.class
 com\yzy\util\FileUtil.class
 com\yzy\model\Result.class
 com\yzy\util\DateUtil.class
+com\yzy\util\MacUtil.class
+com\yzy\service\SendFailService.class
 com\yzy\service\RestService.class
+com\yzy\util\MacUtil$1.class
