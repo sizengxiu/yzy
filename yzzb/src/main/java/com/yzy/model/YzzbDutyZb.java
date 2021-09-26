@@ -7,8 +7,9 @@ import java.util.Date;
  * yzzb_duty_zb
  * @author 
  */
-public class YzzbDutyZb implements Serializable {
+public class YzzbDutyZb implements Serializable,Cloneable {
     private Integer id;
+    private Integer userId;
 
     /**
      * 值班日期
@@ -23,7 +24,7 @@ public class YzzbDutyZb implements Serializable {
     /**
      * 数据状态0/1
      */
-    private Date state;
+    private Integer state;
 
     private Date insertTime;
 
@@ -39,6 +40,15 @@ public class YzzbDutyZb implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getDate() {
@@ -57,11 +67,11 @@ public class YzzbDutyZb implements Serializable {
         this.publishState = publishState;
     }
 
-    public Date getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(Date state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 
@@ -87,5 +97,16 @@ public class YzzbDutyZb implements Serializable {
 
     public void setWeekIndex(Integer weekIndex) {
         this.weekIndex = weekIndex;
+    }
+
+    @Override
+    public YzzbDutyZb clone(){
+        YzzbDutyZb zb=null;
+        try {
+            zb = (YzzbDutyZb)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return zb;
     }
 }

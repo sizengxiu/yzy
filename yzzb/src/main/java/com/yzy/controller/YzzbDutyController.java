@@ -1,8 +1,11 @@
 package com.yzy.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yzy.model.DutyResultVo;
 import com.yzy.model.KeyValueEntity;
 import com.yzy.model.Result;
+import com.yzy.model.UserVo;
 import com.yzy.service.DutyPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +28,13 @@ public class YzzbDutyController {
     @Autowired
     private DutyPlanService dutyPlanService;
 
+    /**
+     * 当月是否存在已发布的排版数据
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/26 20:45
+     */
     @RequestMapping("checkIfPublishedByDate")
     public Result checkIfPublishedByDate(@RequestParam("year") int year, @RequestParam("month") int month){
         boolean success = dutyPlanService.checkIfPublishedByDate(year, month);
@@ -78,6 +88,22 @@ public class YzzbDutyController {
     public Result planByDate(@RequestParam("year") int year,@RequestParam("month")int month){
         List<DutyResultVo> list = dutyPlanService.planByDate(year, month);
         return Result.getSuccessResult(list);
+    }
+
+
+    /**
+     * 根据日期获取排班数据
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/18 19:41
+     */
+    @RequestMapping("getPbListByDate")
+    public Result getPbListByDate(@RequestParam("year") int year,@RequestParam("month")int month){
+        PageHelper.startPage(0,200);
+        List<DutyResultVo> list = dutyPlanService.getPbListByDate(year, month);
+        PageInfo<DutyResultVo> pageInfo = new PageInfo<>(list);
+        return Result.getSuccessResult(pageInfo);
     }
 
 

@@ -107,9 +107,9 @@ function addEmployeeByBatch(source){
         contentType:false,
         success:function(result){
             console.info(result);
-            layer.msg(result.message);
+            layer.alert(result.message);
             if(result.success){
-               $('#exampleModal').modal('toggle');
+                $('#exampleModal').modal('toggle');
                 $('#user-table').datagrid('reload');
             }
         },

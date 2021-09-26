@@ -10,6 +10,7 @@ import java.util.Date;
 public class DutyResultVo  implements  Cloneable{
 
     private int userId;
+    private String code;
     private int day;
     private int weekIndex;
     private String name;
@@ -26,6 +27,13 @@ public class DutyResultVo  implements  Cloneable{
     }
 
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public int getWeekIndex() {
         return weekIndex;

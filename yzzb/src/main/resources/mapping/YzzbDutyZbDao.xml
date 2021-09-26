@@ -3,22 +3,28 @@
 <mapper namespace="com.yzy.dao.YzzbDutyZbDao">
   <resultMap id="BaseResultMap" type="com.yzy.model.YzzbDutyZb">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="date" jdbcType="DATE" property="date" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="zb_date" jdbcType="DATE" property="date" />
     <result column="publish_state" jdbcType="INTEGER" property="publishState" />
-    <result column="state" jdbcType="TIMESTAMP" property="state" />
+    <result column="state" jdbcType="INTEGER" property="state" />
     <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="week_index" jdbcType="INTEGER" property="weekIndex" />
   </resultMap>
+
+
   <resultMap id="zb" type="com.yzy.model.DutyResultVo">
-    <id column="sex" jdbcType="INTEGER" property="sex" />
-    <result column="date" jdbcType="DATE" property="date" />
+    <id column="code" jdbcType="VARCHAR" property="code" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="zb_date" jdbcType="DATE" property="date" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="week_index" jdbcType="INTEGER" property="weekIndex" />
   </resultMap>
+
+
   <sql id="Base_Column_List">
-    id, `date`, publish_state, `state`, insert_time, update_time, week_index
+    id, user_id, zb_date, publish_state, `state`, insert_time, update_time, week_index
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -31,18 +37,21 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyZb" useGeneratedKeys="true">
-    insert into yzzb_duty_zb (`date`, publish_state, `state`, 
-      insert_time, update_time, week_index
-      )
-    values (#{date,jdbcType=DATE}, #{publishState,jdbcType=INTEGER}, #{state,jdbcType=TIMESTAMP}, 
-      #{insertTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{weekIndex,jdbcType=INTEGER}
-      )
+    insert into yzzb_duty_zb (user_id, zb_date, publish_state,
+      `state`, insert_time, update_time, 
+      week_index)
+    values (#{userId,jdbcType=INTEGER}, #{date,jdbcType=DATE}, #{publishState,jdbcType=INTEGER}, 
+      #{state,jdbcType=INTEGER}, #{insertTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{weekIndex,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.yzy.model.YzzbDutyZb" useGeneratedKeys="true">
     insert into yzzb_duty_zb
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
       <if test="date != null">
-        `date`,
+        zb_date,
       </if>
       <if test="publishState != null">
         publish_state,
@@ -61,6 +70,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
       <if test="date != null">
         #{date,jdbcType=DATE},
       </if>
@@ -68,7 +80,7 @@
         #{publishState,jdbcType=INTEGER},
       </if>
       <if test="state != null">
-        #{state,jdbcType=TIMESTAMP},
+        #{state,jdbcType=INTEGER},
       </if>
       <if test="insertTime != null">
         #{insertTime,jdbcType=TIMESTAMP},
@@ -84,14 +96,17 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.yzy.model.YzzbDutyZb">
     update yzzb_duty_zb
     <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
       <if test="date != null">
-        `date` = #{date,jdbcType=DATE},
+        zb_date = #{date,jdbcType=DATE},
       </if>
       <if test="publishState != null">
         publish_state = #{publishState,jdbcType=INTEGER},
       </if>
       <if test="state != null">
-        `state` = #{state,jdbcType=TIMESTAMP},
+        `state` = #{state,jdbcType=INTEGER},
       </if>
       <if test="insertTime != null">
         insert_time = #{insertTime,jdbcType=TIMESTAMP},
@@ -107,24 +122,57 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yzy.model.YzzbDutyZb">
     update yzzb_duty_zb
-    set `date` = #{date,jdbcType=DATE},
+    set user_id = #{userId,jdbcType=INTEGER},
+      zb_date = #{date,jdbcType=DATE},
       publish_state = #{publishState,jdbcType=INTEGER},
-      `state` = #{state,jdbcType=TIMESTAMP},
+      `state` = #{state,jdbcType=INTEGER},
       insert_time = #{insertTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       week_index = #{weekIndex,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
+
+
   <select id="getPbListByDate" parameterType="date" resultMap="zb">
-    select *
+    select user.code,user.name,user.phone,user.sex,zb.zb_date,zb.week_index
     from yzzb_duty_zb zb
-    left join yzzb_zb_r_user r
-      on zb.id=r.zb_id
-    left join  user
-      on r.user_id=user.id
+           left join yzzb_zb_r_user r
+                     on zb.id=r.zb_id
+           left join  user
+                      on zb.user_id=user.id
     where zb.state=1
-      and zb.date &gt;= #{date}
-      and zb.date &lt;=#{date}+1
+      and zb.zb_date &gt;= #{startDate}
+      and zb.zb_date &lt; adddate(#{endDate},interval 1 day)
+  </select>
+
+
+  <delete id="deleteZbListByDate" parameterType="map">
+    update yzzb_duty_zb zb
+      set state=0,update_time=#{updateDate}
+    where zb.zb_date &gt;= #{startDate}
+      and zb.zb_date &lt; adddate(#{endDate},interval 1 day)
+  </delete>
+
+
+  <insert id="addZbListByBatch" parameterType="list">
+    insert into yzzb_duty_zb (user_id, zb_date, publish_state,
+                              `state`, insert_time, update_time,
+                              week_index)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.userId,jdbcType=INTEGER}, #{item.date,jdbcType=DATE}, #{item.publishState,jdbcType=INTEGER},
+      #{item.state,jdbcType=INTEGER}, #{item.insertTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP},
+      #{item.weekIndex,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+
+  <select id="getPublishedDataCountByDate" parameterType="map" resultType="int">
+      select count(1) from yzzb_duty_zb
+      where state=1
+        and publish_state=1
+        and zb_date &gt;= #{startDate}
+        and zb_date &lt; adddate(#{endDate},interval 1 day)
   </select>
 </mapper>

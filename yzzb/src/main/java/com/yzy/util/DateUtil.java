@@ -1,5 +1,6 @@
 package com.yzy.util;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -9,10 +10,13 @@ import java.util.Date;
  */
 public class DateUtil {
 
+    public static final SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd ");
+
     /**
      * 获取指定日期当月的第一天
-     * @param: 
-     * @return: 
+     * @param:
+     * @return:
      * @auther: szx
      * @date: 2021/5/18 20:05
      */
@@ -20,8 +24,12 @@ public class DateUtil {
         // 获取前月的第一天
         Calendar  calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR,year);
-        calendar.set(Calendar.MONTH,month);
+        calendar.set(Calendar.MONTH,month-1);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.HOUR_OF_DAY,0);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND,0);
+        calendar.set(Calendar.MILLISECOND,0);
         return calendar.getTime();
     }
     /**
@@ -37,6 +45,10 @@ public class DateUtil {
         calendar.set(Calendar.YEAR,year);
         calendar.set(Calendar.MONTH,month);
         calendar.set(Calendar.DAY_OF_MONTH, 0);
+        calendar.set(Calendar.HOUR_OF_DAY,0);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND,0);
+        calendar.set(Calendar.MILLISECOND,0);
         return calendar.getTime();
     }
 
