@@ -28,16 +28,21 @@
                  查看排班
             </button>
             &nbsp;&nbsp;
-            <button type="button" class="btn btn-primary" onclick="planByDate()">
-                 开始排班
+            <button type="button" id="pbBtn" class="btn btn-primary" onclick="planByDate()">
+                 预排班
             </button>
         </div>
     </div>
 </div>
 <p></p>
 <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">
+    <div class="col-lg-3" ></div>
+    <div class="col-lg-6" style="align:center">
+        <div id="unpublish_div" >
+            <label>当前数据未发布，如果确认使用当前结果，请点击发布按钮！</label>
+            <button type="button" class="btn btn-primary" onclick="publishPbData()">发布数据</button>
+            <p>
+        </div>
         <table  id="paiban-view-table" >
         </table>
     </div>

@@ -14,7 +14,8 @@
 
 
   <resultMap id="zb" type="com.yzy.model.DutyResultVo">
-    <id column="code" jdbcType="VARCHAR" property="code" />
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="zb_date" jdbcType="DATE" property="date" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -135,12 +136,20 @@
 
 
   <select id="getPbListByDate" parameterType="date" resultMap="zb">
-    select user.code,user.name,user.phone,user.sex,zb.zb_date,zb.week_index
+    select user.code,user.name,user.phone,user.sex,zb.zb_date,zb.week_index,zb.user_id
     from yzzb_duty_zb zb
            left join yzzb_zb_r_user r
                      on zb.id=r.zb_id
            left join  user
                       on zb.user_id=user.id
+    where zb.state=1
+      and zb.zb_date &gt;= #{startDate}
+      and zb.zb_date &lt; adddate(#{endDate},interval 1 day)
+  </select>
+
+  <select id="getPbCountByDate" parameterType="map" resultType="int">
+    select count(1)
+    from yzzb_duty_zb zb
     where zb.state=1
       and zb.zb_date &gt;= #{startDate}
       and zb.zb_date &lt; adddate(#{endDate},interval 1 day)
@@ -168,11 +177,29 @@
   </insert>
 
 
-  <select id="getPublishedDataCountByDate" parameterType="map" resultType="int">
+  <select id="getPublishedDataCountByStartDate" parameterType="map" resultType="int">
+      select count(1) from yzzb_duty_zb
+      where state=1
+        and publish_state=1
+        and zb_date &gt;= #{startDate}
+  </select>
+  <select id="getPublishedDataCountByMonth" parameterType="map" resultType="int">
       select count(1) from yzzb_duty_zb
       where state=1
         and publish_state=1
         and zb_date &gt;= #{startDate}
         and zb_date &lt; adddate(#{endDate},interval 1 day)
   </select>
+
+  <update id="publishPbDataByDate" parameterType="map" >
+    update yzzb_duty_zb
+    set publish_state=1,update_time=#{updateDate}
+    where state=1
+      and zb_date &gt;= #{startDate}
+      and zb_date &lt; adddate(#{endDate},interval 1 day)
+  </update>
+
+  <delete id="deleteAllData" parameterType="map">
+    delete from yzzb_duty_zb
+  </delete>
 </mapper>

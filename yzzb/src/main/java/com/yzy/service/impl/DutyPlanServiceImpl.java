@@ -9,6 +9,7 @@ import com.yzy.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -18,6 +19,7 @@ import java.util.*;
  * @date 2021/5/17 22:16
  */
 @Service
+@Transactional
 public class DutyPlanServiceImpl implements DutyPlanService {
 
 
@@ -36,22 +38,21 @@ public class DutyPlanServiceImpl implements DutyPlanService {
     public List<DutyResultVo> getPbListByDate(int year, int month) {
         Date startDate = DateUtil.getMonthFirstDay(year, month);
         Date endDate = DateUtil.getMonthLastDay(year, month);
-        List<DutyResultVo> list = zbDao.getPbListByDate(startDate,endDate);
+        List<DutyResultVo> list = zbDao.getPbListByDate(startDate, endDate);
         return list;
     }
 
     @Override
     public List<DutyResultVo> planByDate(int year, int month) {
-        //1.合法性检测，如果已经排过班，则不允许排班
-        if (checkIfPublishedByDate(year, month)) {
-            throw new BussinessException("该月份存在已经发布的排班数据，不允许重新排班！");
-        }
+        //1.合法性检测
+        checkAllowPbCurrentMonthData(year, month);
+
         //2.获取后续值班人员列表以及分组信息
         Map<Integer, Set<Integer>> groupMap = new HashMap<>();//用户分组信息
         Map<Integer, List<Integer>> candidateMap = new HashMap<>();//候选值班员信息按值班周几分类
         Map<Integer, YzzbDutyCandidateVo> candidateDic = new HashMap<>();//候选值班员信息
 
-        List<YzzbDutyCandidateVo> candidateList = candidateDao.getCandidateList();
+        List<YzzbDutyCandidateVo> candidateList = candidateDao.getCandidateVoList();
         if (CollectionUtil.isEmpty(candidateList)) {
             throw new BussinessException("未查询到候选的值班员，请确认值班员是否为空！");
         }
@@ -98,16 +99,12 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         int weekIndex = DateUtil.getFirstDayWeekIndex(year, month);
 
         DutyResultVo dutyResultVo = new DutyResultVo();
-        for (int i = 1; i <= monthDays; i++) {
-/*            YzzbDutyResult yzzbDutyResult=new YzzbDutyResult();
-            Map<Integer, DayDutyResultVo> dicMap = getDayDutyResultVoMap(yzzbDutyResult);*/
-            for (; weekIndex <= 7 && i <= monthDays; weekIndex++, i++) {
-//                DayDutyResultVo dayDutyResultVo = dicMap.get(weekIndex);
-                List<Integer> list = selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, candidateDic);
-                setCandidateInfo(dutyResultVo, i, weekIndex, list, candidateDic, resultList);
+        for (int i = 1; i <= monthDays; weekIndex++, i++) {
+            List<Integer> list = selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, candidateDic);
+            setCandidateInfo(dutyResultVo, i, weekIndex, list, candidateDic, resultList);
+            if (weekIndex == 7) {
+                weekIndex = 0;
             }
-            i--;
-            weekIndex -= 7;
         }
 
         addPbResultToDb(resultList, year, month);
@@ -290,11 +287,48 @@ public class DutyPlanServiceImpl implements DutyPlanService {
     }
 
 
-    public boolean checkIfPublishedByDate(int year, int month) {
-        Date endDate = DateUtil.getMonthLastDay(year, month);
+    /**
+     * 当前月份数据是否允许发布
+     * 1.当前及后续月份数据已发布，则不允许发布
+     * 2.当前月份尚未预排班，不允许发布
+     *
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 20:32
+     */
+    @Override
+    public boolean checkAllowPublishCurrentMonthData(int year, int month) {
+
+        checkAllowPbCurrentMonthData(year, month);
         Date startDate = DateUtil.getMonthFirstDay(year, month);
-        int count = zbDao.getPublishedDataCountByDate(startDate, endDate);
-        return count>0?true:false;
+        Date endDate = DateUtil.getMonthLastDay(year, month);
+
+        int count = zbDao.getPbCountByDate(startDate, endDate);
+        if (count == 0) {
+            throw new BussinessException("当前月份尚未进行预排班，请先点击“预排班”按钮进行排班！", 2);
+        }
+        return true;
+    }
+
+    /**
+     * 当前月份使用允许预排班
+     * 1.当前月份数据已发布
+     * 2.当前后续月份存在已发布的数据
+     *
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 20:37
+     */
+    public boolean checkAllowPbCurrentMonthData(int year, int month) {
+        Date startDate = DateUtil.getMonthFirstDay(year, month);
+
+        int count = zbDao.getPublishedDataCountByStartDate(startDate);
+        if (count > 0) {
+            throw new BussinessException("当前月份存在已经发布的排班数据，不允许重新排班！", 1);
+        }
+        return true;
     }
 
 
@@ -325,7 +359,7 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         Calendar calendar = Calendar.getInstance();
         for (DutyResultVo vo : resultList) {
             YzzbDutyZb zbClone = zb.clone();
-            calendar.set(year, month-1, vo.getDay());
+            calendar.set(year, month - 1, vo.getDay());
             zbClone.setDate(calendar.getTime());//此处vo.date未设值
             zbClone.setWeekIndex(vo.getWeekIndex());
             zbClone.setUserId(vo.getUserId());
@@ -348,5 +382,61 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         Date startDate = DateUtil.getMonthFirstDay(year, month);
         Date endDate = DateUtil.getMonthLastDay(year, month);
         return zbDao.deleteZbListByDate(startDate, endDate, updateDate);
+    }
+
+
+    @Override
+    public int publishPbData(int year, int month) {
+        checkAllowPublishCurrentMonthData(year, month);
+        //1.将zb表中数据的发布状态置1
+        Date startDate = DateUtil.getMonthFirstDay(year, month);
+        Date endDate = DateUtil.getMonthLastDay(year, month);
+        zbDao.publishPbDataByDate(startDate, endDate, new Date());
+        //2.更新候选人信息
+        //      1.遍历候选人列表
+        //      2.如果本月未参与排班，则将其从列表中删除（列表只保存要更新的数据）
+        //      3.如果本月参与排班，则更新其排班的相关信息
+        //      4.更新列表到数据库
+        //候选人列表
+        List<YzzbDutyCandidate> candidateList = candidateDao.getCandidateList();
+        //排班数据列表
+        List<DutyResultVo> pbList = zbDao.getPbListByDate(startDate, endDate);
+
+        //为了快速检测候选人是否要从列表中删除，构造Map
+        Map<Integer, DutyResultVo> pbMap = new HashMap<>(128);
+        for (DutyResultVo vo : pbList) {
+            pbMap.put(vo.getUserId(), vo);
+        }
+
+        Date date = new Date();
+        Iterator<YzzbDutyCandidate> candidateItr = candidateList.iterator();
+        while (candidateItr.hasNext()) {
+            YzzbDutyCandidate candidate = candidateItr.next();
+            DutyResultVo dutyResultVo = pbMap.get(candidate.getEmployeeId());
+            if (dutyResultVo == null) {
+                candidateItr.remove();
+                continue;
+            }
+
+            int nextWeekIndex = dutyResultVo.getWeekIndex() == 7 ? 1 : dutyResultVo.getWeekIndex() + 1;
+            candidate.setCurrentIndexWeek(nextWeekIndex);
+            candidate.setLastDutyDate(dutyResultVo.getDate());
+            candidate.setLastIndexWeek(dutyResultVo.getWeekIndex());
+            candidate.setUpdateTime(date);
+        }
+        candidateDao.updateCandidateZbInfoByBatch(candidateList);
+
+        return 0;
+    }
+
+    @Override
+    public boolean isDataPublished(int year, int month) {
+        Date startDate = DateUtil.getMonthFirstDay(year, month);
+        Date endDate = DateUtil.getMonthLastDay(year, month);
+        int count = zbDao.getPublishedDataCountByMonth(startDate, endDate);
+        if(count>0){
+            return true;
+        }
+        return false;
     }
 }

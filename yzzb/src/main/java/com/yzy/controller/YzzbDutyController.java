@@ -29,15 +29,15 @@ public class YzzbDutyController {
     private DutyPlanService dutyPlanService;
 
     /**
-     * 当月是否存在已发布的排版数据
+     * 当前月份数据是否允许发布
      * @param:
      * @return:
      * @auther: szx
      * @date: 2021/9/26 20:45
      */
-    @RequestMapping("checkIfPublishedByDate")
-    public Result checkIfPublishedByDate(@RequestParam("year") int year, @RequestParam("month") int month){
-        boolean success = dutyPlanService.checkIfPublishedByDate(year, month);
+    @RequestMapping("checkAllowPublishCurrentMonthData")
+    public Result checkAllowPublishCurrentMonthData(@RequestParam("year") int year, @RequestParam("month") int month){
+        boolean success = dutyPlanService.checkAllowPublishCurrentMonthData(year, month);
         Result result = new Result();
         result.setSuccess(success);
         return result;
@@ -105,6 +105,35 @@ public class YzzbDutyController {
         PageInfo<DutyResultVo> pageInfo = new PageInfo<>(list);
         return Result.getSuccessResult(pageInfo);
     }
+
+    /**
+     * 发布当月排班数据
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 20:19
+     */
+    @RequestMapping("publishPbData")
+    public Result publishPbData(@RequestParam("year") int year,@RequestParam("month")int month){
+        dutyPlanService.publishPbData(year, month);
+        return new Result();
+    }
+    /**
+     *  当月数据是否已发布
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/28 21:56
+     */
+
+    @RequestMapping("isDataPublished")
+    public Result isDataPublished(@RequestParam("year") int year,@RequestParam("month")int month){
+        boolean dataPublished = dutyPlanService.isDataPublished(year, month);
+        Result result = new Result();
+        result.setSuccess(dataPublished);
+        return result;
+    }
+
 
 
     @RequestMapping("test")

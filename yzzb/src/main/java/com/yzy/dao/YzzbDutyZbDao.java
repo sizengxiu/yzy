@@ -30,6 +30,15 @@ public interface YzzbDutyZbDao {
     List<DutyResultVo> getPbListByDate(@Param("startDate") Date startDate,@Param("endDate") Date endDate);
 
     /**
+     * 获取排班的数量
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 20:48
+     */
+    int getPbCountByDate(@Param("startDate") Date startDate,@Param("endDate") Date endDate);
+
+    /**
      * 按时间删除数据（逻辑删除）
      * @param:
      * @return:
@@ -55,7 +64,33 @@ public interface YzzbDutyZbDao {
      * @auther: szx
      * @date: 2021/5/18 20:28
      */
-    int getPublishedDataCountByDate(@Param("startDate")Date start,@Param("endDate")Date end);
+    int getPublishedDataCountByStartDate(@Param("startDate")Date start);
+
+    /**
+     * 获取当月已发布数据数量
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/28 21:52
+     */
+    int getPublishedDataCountByMonth(@Param("startDate")Date start,@Param("endDate")Date end);
+
+    /**
+     * 发布排班数据
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 18:27
+     */
+    int publishPbDataByDate(@Param("startDate")Date start,@Param("endDate")Date end,@Param("updateDate") Date updateDate);
+    /**
+     * 删除所有值班数据
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 21:26
+     */
+    int deleteAllData();
 }
 
 

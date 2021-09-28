@@ -39,7 +39,11 @@ $(function() {
                 var result=data.data;
                 result.rows=result.list;
                 if(result.size==0){
-                    layer.alert("当前月份未查询到排班数据，请点击排班按钮进行排班！");
+                    layer.msg("当前月份未查询到排班数据，请点击排班按钮进行排班！");
+                    $("#unpublish_div").hide();
+                    $("#pbBtn").show();
+                }else{
+                     isDataPublished();
                 }
                 return data.data;
             }else{
@@ -143,4 +147,55 @@ function getPbListByDate(){
         month:$('#monthCom').combobox('getValue')
     });
 
+}
+
+/**
+ * 发布排班数据
+ */
+function publishPbData(){
+    var year = $('#yearCom').combobox('getValue');
+    var month = $('#monthCom').combobox('getValue');
+    $.ajax({
+        url:'/yzzb/duty/publishPbData',
+        type:'post',
+        dataType:'json',
+        data:{'year':year,'month':month},
+        success:function(result){
+            if(result.success){
+                $("#unpublish_div").hide();
+                $("#pbBtn").hide();
+                layer.alert("排班数据发布成功！");
+            }else{
+                $("#unpublish_div").show();
+                $("#pbBtn").show();
+                layer.msg(result.message);
+            }
+        },
+        error:function(status){
+        }
+    });
+}
+
+/**
+ * 当前月份数据是否允许发布 */
+function isDataPublished(){
+    var year = $('#yearCom').combobox('getValue');
+    var month = $('#monthCom').combobox('getValue');
+    $.ajax({
+        url:'/yzzb/duty/isDataPublished',
+        type:'post',
+        dataType:'json',
+        data:{'year':year,'month':month},
+        success:function(result){
+            if(result.success){
+                $("#unpublish_div").hide();
+                $("#pbBtn").hide();
+            }else{
+                $("#unpublish_div").show();
+                $("#pbBtn").show();
+            }
+        },
+        error:function(status){
+        }
+    });
 }

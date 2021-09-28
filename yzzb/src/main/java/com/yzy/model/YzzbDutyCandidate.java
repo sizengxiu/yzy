@@ -28,7 +28,7 @@ public class YzzbDutyCandidate implements Serializable,Cloneable {
     private Integer lastIndexWeek;
 
     /**
-     * 当前排班日期
+     * 当前排班日期(已弃用)
      */
     private Date currentDutyDate;
 

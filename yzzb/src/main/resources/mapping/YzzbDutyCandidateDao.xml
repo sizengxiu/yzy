@@ -212,7 +212,7 @@
     delete from yzzb_duty_candidate
   </delete>
 
-  <select id="getCandidateList" parameterType="map" resultMap="candidateVo">
+  <select id="getCandidateVoList" parameterType="map" resultMap="candidateVo">
     select ydc.*,g.groupid,user.name userName,user.phone ,user.sex from yzzb_duty_candidate ydc
     left join yzzb_duty_group_user g
     on ydc.id=g.userid and g.state=1
@@ -223,11 +223,31 @@
     order by current_index_week asc ,last_duty_date asc
   </select>
 
+  <select id="getCandidateList" parameterType="map" resultMap="BaseResultMap">
+    select * from  yzzb_duty_candidate
+    where state=1
+  </select>
+
   <select id="getUserCountGroupByWeekIndex" resultType="com.yzy.model.UserCountVo">
     select current_index_week weekIndex,sum(1) userCount from yzzb_duty_candidate
     where state=1 and attend_duty=1
     group by current_index_week
     order by userCount asc
   </select>
+
+  <update id="updateCandidateZbInfoByBatch" parameterType="map" >
+    <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+      update yzzb_duty_candidate
+        set
+        current_index_week = #{item.currentIndexWeek,jdbcType=INTEGER},
+        last_index_week = #{item.lastIndexWeek,jdbcType=INTEGER},
+        last_duty_date = #{item.lastDutyDate,jdbcType=DATE},
+        update_time = #{item.updateTime,jdbcType=TIMESTAMP}
+        where id = #{item.id,jdbcType=INTEGER}
+    </foreach>
+
+  </update>
+
+
 
 </mapper>

@@ -38,6 +38,26 @@ public interface DutyPlanService {
      * @auther: szx
      * @date: 2021/5/18 21:22
      */
-    boolean checkIfPublishedByDate(int year,int month);
+    boolean checkAllowPublishCurrentMonthData(int year,int month);
+
+    /**
+     * 发布排班数据
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 18:58
+     */
+    int publishPbData(int year,int month);
+
+
+
+    /**
+     * 当月数据是否已发布
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/28 21:54
+     */
+    boolean  isDataPublished(int year,int month);
 
 }

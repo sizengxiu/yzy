@@ -52,7 +52,15 @@ public interface YzzbDutyCandidateDao {
      * @auther: szx
      * @date: 2021/6/6 15:21
      */
-    List<YzzbDutyCandidateVo> getCandidateList();
+    List<YzzbDutyCandidateVo> getCandidateVoList();
+    /**
+     * 获取所有有效的候选人
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 20:04
+     */
+    List<YzzbDutyCandidate> getCandidateList();
 
     /**
      * 获取周一到周日每天的人数，结果按人数从少到多升序排列
@@ -62,4 +70,16 @@ public interface YzzbDutyCandidateDao {
      * @date: 2021/6/30 21:58
      */
     List<UserCountVo> getUserCountGroupByWeekIndex();
+
+    /**
+     * 批量更新候选信息（只更新上次及当前值班信息）
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/27 18:56
+     */
+    int updateCandidateZbInfoByBatch(@Param("list")List<YzzbDutyCandidate> list);
+
+
+
 }
