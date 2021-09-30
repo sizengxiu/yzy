@@ -5,6 +5,7 @@ import com.yzy.model.YzzbDutyCandidate;
 import com.yzy.model.YzzbDutyCandidateVo;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface YzzbDutyCandidateDao {
@@ -52,7 +53,7 @@ public interface YzzbDutyCandidateDao {
      * @auther: szx
      * @date: 2021/6/6 15:21
      */
-    List<YzzbDutyCandidateVo> getCandidateVoList();
+    List<YzzbDutyCandidateVo> getCandidateVoList(@Param("date") Date date,@Param("period")int period);
     /**
      * 获取所有有效的候选人
      * @param:
@@ -80,6 +81,14 @@ public interface YzzbDutyCandidateDao {
      */
     int updateCandidateZbInfoByBatch(@Param("list")List<YzzbDutyCandidate> list);
 
+    /**
+     *  获取有效候选人数
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/30 20:04
+     */
+    int getCadidateCount();
 
 
 }

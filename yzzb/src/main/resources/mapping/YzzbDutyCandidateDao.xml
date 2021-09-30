@@ -213,19 +213,23 @@
   </delete>
 
   <select id="getCandidateVoList" parameterType="map" resultMap="candidateVo">
-    select ydc.*,g.groupid,user.name userName,user.phone ,user.sex from yzzb_duty_candidate ydc
+    select ydc.*,g.groupid,user.name userName,user.phone ,user.sex
+    from yzzb_duty_candidate ydc
     left join yzzb_duty_group_user g
     on ydc.id=g.userid and g.state=1
     left join user on ydc.employee_id=user.id
     where ydc.attend_duty=1
       and user.state=1
       and ydc.user_state=1
+      and ydc.last_duty_date &lt; subdate(#{date},interval #{period} day)
     order by current_index_week asc ,last_duty_date asc
   </select>
 
   <select id="getCandidateList" parameterType="map" resultMap="BaseResultMap">
     select * from  yzzb_duty_candidate
     where state=1
+          and user_state=1
+          and attend_duty=1
   </select>
 
   <select id="getUserCountGroupByWeekIndex" resultType="com.yzy.model.UserCountVo">
@@ -248,6 +252,13 @@
 
   </update>
 
+  <select id="getCadidateCount" parameterType="map" resultType="int">
+    select count(1)
+    from yzzb_duty_candidate ydc
+    where ydc.state=1
+      and user_state=1
+      and attend_duty=1
+  </select>
 
 
 </mapper>

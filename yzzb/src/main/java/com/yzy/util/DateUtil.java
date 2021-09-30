@@ -63,7 +63,11 @@ public class DateUtil {
         Date monthFirstDay = getMonthFirstDay(year, month);
         Calendar  calendar = Calendar.getInstance();
         calendar.setTime(monthFirstDay);
-        return calendar.get(Calendar.DAY_OF_WEEK);
+        int weekIndex = calendar.get(Calendar.DAY_OF_WEEK);
+        if(weekIndex==1){
+            return 7;
+        }
+        return weekIndex-1;
     }
 
     /**
@@ -78,6 +82,31 @@ public class DateUtil {
         calendar.set(Calendar.YEAR,year);
         calendar.set(Calendar.MONTH,month-1);
         return  calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+
+    /**
+     * 通过时间秒毫秒数判断两个时间的间隔
+     * @param date1
+     * @param date2
+     * @return
+     */
+    public static int getDifferentDays(Date date1,Date date2) {
+        int days = (int) ((date2.getTime() - date1.getTime()) / (1000*3600*24));
+        return days;
+    }
+
+    /**
+     * 日期加减天数
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/30 20:41
+     */
+    public static Date addDateByDay(Date date,int day){
+        Calendar  calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DATE, day);
+        return calendar.getTime();
     }
 
 

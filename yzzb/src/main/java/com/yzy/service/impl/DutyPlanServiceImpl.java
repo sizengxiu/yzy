@@ -6,6 +6,8 @@ import com.yzy.model.*;
 import com.yzy.service.DutyPlanService;
 import com.yzy.util.CollectionUtil;
 import com.yzy.util.DateUtil;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ import java.util.*;
  * @user szx
  * @date 2021/5/17 22:16
  */
+@Slf4j
 @Service
 @Transactional
 public class DutyPlanServiceImpl implements DutyPlanService {
@@ -34,6 +37,8 @@ public class DutyPlanServiceImpl implements DutyPlanService {
     @Autowired
     private YzzbDutyZbDao zbDao;
 
+    private int period = 0;
+
     @Override
     public List<DutyResultVo> getPbListByDate(int year, int month) {
         Date startDate = DateUtil.getMonthFirstDay(year, month);
@@ -47,13 +52,23 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         //1.合法性检测
         checkAllowPbCurrentMonthData(year, month);
 
+        Date startDate = DateUtil.getMonthFirstDay(year, month);
+        Date endDate = DateUtil.getMonthLastDay(year, month);
+
         //2.获取后续值班人员列表以及分组信息
         Map<Integer, Set<Integer>> groupMap = new HashMap<>();//用户分组信息
-        Map<Integer, List<Integer>> candidateMap = new HashMap<>();//候选值班员信息按值班周几分类
+        Map<Integer, Map<Integer, List<Integer>>> candidateMap = new HashMap<>();//候选值班员信息按值班周几分类
         Map<Integer, YzzbDutyCandidateVo> candidateDic = new HashMap<>();//候选值班员信息
+//        Map<Integer,List<Integer>> sexCandidateMap=new HashMap<>();//男女分开
 
-        List<YzzbDutyCandidateVo> candidateList = candidateDao.getCandidateVoList();
+        //平均隔多少天参加一次值班；其中减14 是为了极端情况下会差14天
+        //人员不可能正好够一次排班的，比如人数第一次排班时，并不够40天的，因为人员是均匀分散在周一到周天的，实际排时是按7的倍数排的
+
+        period = candidateDao.getCadidateCount() / 3 - 14;
+        log.info("{}年{}月排班，每隔{}天值班一次", year, month, period);
+        List<YzzbDutyCandidateVo> candidateList = candidateDao.getCandidateVoList(endDate, period);
         if (CollectionUtil.isEmpty(candidateList)) {
+            log.warn("如果是第一次执行碰到这个错误，请注意是否是忘了修改时间：update yzzb_duty_candidate set last_duty_date='2021-07-15'");
             throw new BussinessException("未查询到候选的值班员，请确认值班员是否为空！");
         }
 
@@ -64,13 +79,19 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         for (YzzbDutyCandidateVo candidate : candidateList) {
             Integer currentIndexWeek = candidate.getCurrentIndexWeek();
             Integer id = candidate.getEmployeeId();
+            int sex = candidate.getSex();
             //1.放入dic
             candidateDic.put(id, candidate);
             //2.按值班周几分组
-            List<Integer> eachCandidateList = candidateMap.get(currentIndexWeek);
+            Map<Integer, List<Integer>> eachSexCandidateMap = candidateMap.get(currentIndexWeek);
+            if (eachSexCandidateMap == null) {
+                eachSexCandidateMap = new HashMap<>();
+                candidateMap.put(currentIndexWeek, eachSexCandidateMap);
+            }
+            List<Integer> eachCandidateList = eachSexCandidateMap.get(sex);
             if (eachCandidateList == null) {
                 eachCandidateList = new LinkedList<>();
-                candidateMap.put(currentIndexWeek, eachCandidateList);
+                eachSexCandidateMap.put(sex, eachCandidateList);
             }
             eachCandidateList.add(id);
 
@@ -100,7 +121,8 @@ public class DutyPlanServiceImpl implements DutyPlanService {
 
         DutyResultVo dutyResultVo = new DutyResultVo();
         for (int i = 1; i <= monthDays; weekIndex++, i++) {
-            List<Integer> list = selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, candidateDic);
+            Date currentDate = DateUtil.addDateByDay(startDate, i-1);
+            List<Integer> list = selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, currentDate,candidateDic,  false);
             setCandidateInfo(dutyResultVo, i, weekIndex, list, candidateDic, resultList);
             if (weekIndex == 7) {
                 weekIndex = 0;
@@ -149,64 +171,73 @@ public class DutyPlanServiceImpl implements DutyPlanService {
      * @auther: szx
      * @date: 2021/6/25 16:10
      */
-    private List<Integer> selectCandidate(Map<Integer, Set<Integer>> groupMap, Map<Integer, List<Integer>> candidateMap,
-                                          Set<Integer> alreadyUsedUserSet, int weekIndex,
-                                          Map<Integer, YzzbDutyCandidateVo> candidateDic) {
+    private List<Integer> selectCandidate(Map<Integer, Set<Integer>> groupMap, Map<Integer, Map<Integer, List<Integer>>> candidateMap,
+                                          Set<Integer> alreadyUsedUserSet, int weekIndex, Date currentDate,
+                                          Map<Integer, YzzbDutyCandidateVo> candidateDic,
+                                          boolean alreadyContainsFemale) {
         List<Integer> resultList = new LinkedList<>();//排班结果
-        int count = 0;
-        List<Integer> candidateList = candidateMap.get(weekIndex);
+        //首选选择一个女的
+        if (!alreadyContainsFemale) {
+            selectFemaleCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, currentDate, candidateDic, resultList);
+        }
+        alreadyContainsFemale = true;
+        int count = resultList.size();
+        if (count == 3) {
+            return resultList;
+        }
+        List<Integer> candidateList = candidateMap.get(weekIndex).get(1);
         Iterator<Integer> iterator = candidateList.iterator();
         while (iterator.hasNext() && count < 3) {
             Integer id = iterator.next();
-            //1.如果用户已经在本月内排过班，则从候选排班人员中删除
-            if (alreadyUsedUserSet.contains(id)) {
+            //1.候选人是否合法
+            if (!isIllegalCandidate(alreadyUsedUserSet, currentDate, candidateDic, iterator, id)) {
+                continue;
+            }
+            //2.选择用户后，并从和用户同一个组的人员中选择另外的排班人员;
+            YzzbDutyCandidateVo candidate = candidateDic.get(id);
+            Integer groupId = candidate.getGroupId();
+            //当前选择的人员不在分组中直接选择（不管是选择第几个人，只要他不在分组中都可以选）
+            if (groupId == null) {
+                resultList.add(id);
+                alreadyUsedUserSet.add(id);
                 iterator.remove();
-            } else {
-                //2.选择用户后，并从和用户同一个组的人员中选择另外的排班人员;
-                YzzbDutyCandidateVo candidate = candidateDic.get(id);
-                //当前选择的人员不在分组中直接选择
-                Integer groupId = candidate.getGroupId();
-                if (groupId == null) {
-                    resultList.add(id);
-                    alreadyUsedUserSet.add(id);
-                    count++;
+                count++;
+                continue;
+            }
+            //3.如果排的是第2个值班员，则不选择在分组中，且分组中人数为3的人
+            if (count == 1) {
+                Set<Integer> groupSet = groupMap.get(groupId);
+                if (groupSet.size() > 2) {
                     continue;
                 }
-                //3.如果是排的第三个值班员，则不选择在分组中的人,跳过这个候选人
-                if (count == 2) {
-                    continue;
-                }
-                //4.如果排的是第2个值班员，则不选择在分组中，且分组中人数为3的人
-                if (count == 1) {
-                    Set<Integer> groupSet = groupMap.get(groupId);
-                    if (groupSet.size() > 2) {
-                        continue;
-                    }
-                    //改分组中只有两个人，把另一个人也选上
-                    resultList.add(id);
-                    alreadyUsedUserSet.add(id);
-                    count++;
-                    Iterator<Integer> groupItr = groupSet.iterator();
-                    while (groupItr.hasNext()) {
-                        Integer anotherId = groupItr.next();
-                        if (anotherId.equals(id)) {
-                            resultList.add(anotherId);
-                            alreadyUsedUserSet.add(id);
-                            count++;
-                        }
+                //改分组中只有两个人，把另一个人也选上
+                resultList.add(id);
+                alreadyUsedUserSet.add(id);
+                count++;
+                Iterator<Integer> groupItr = groupSet.iterator();
+                while (groupItr.hasNext()) {
+                    Integer anotherId = groupItr.next();
+                    if (!anotherId.equals(id) && !alreadyUsedUserSet.contains(anotherId)) {
+                        resultList.add(anotherId);
+                        alreadyUsedUserSet.add(anotherId);
+                        count++;
                     }
                 }
+            }
+            //4.如果是排的第三个值班员，则不选择在分组中的人,跳过这个候选人
+            if (count == 2) {
+                continue;
+            }
 
-                if (count >= 3) {
-                    break;
-                }
+            if (count >= 3) {
+                break;
             }
         }
         //count<3，说明循环了一遍了，因为分组规则限制找不到候选人了，分以下几种情况：
         //      1.选了一个人，则剩余的人全都是3人分组，此时需要把这个人去掉，然后重新选择
         //      2.选了两个人，又分两种情况：
         //        2.1这两个人一个组，则此时剩余的人全都在分组中，为了保护分组规则，也为了简单起见，抛出异常给管理员提醒
-        //        2.2这两个人都没有分组，则此时剩余的人也全都在分组中，处理方式同上
+        //        2.2这两个人都没有分组，则此时剩余的人也全都在分组中，处理方式同上(简单粗暴，即使不这样处理，无非只能多排两天)
         //      3.人员全部分完了，鉴于公司已有人数，暂不考虑这种情况
         if (count < 3) {
             if (count == 2) {
@@ -217,8 +248,9 @@ public class DutyPlanServiceImpl implements DutyPlanService {
             }
             Integer id = resultList.get(0);
             alreadyUsedUserSet.add(id);
-            return selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, candidateDic);
+            return selectCandidate(groupMap, candidateMap, alreadyUsedUserSet, weekIndex, currentDate,candidateDic, alreadyContainsFemale);
         }
+
         iterator = candidateList.iterator();
         int deteleCount = 0;
         while (iterator.hasNext() && deteleCount < 3) {
@@ -235,6 +267,83 @@ public class DutyPlanServiceImpl implements DutyPlanService {
 
         return resultList;
     }
+
+    /**
+     * 首先选择女性候选人
+     *
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/30 19:40
+     */
+    private void selectFemaleCandidate(Map<Integer, Set<Integer>> groupMap, Map<Integer, Map<Integer, List<Integer>>> candidateMap,
+                                       Set<Integer> alreadyUsedUserSet, int weekIndex, Date currentDate,
+                                       Map<Integer, YzzbDutyCandidateVo> candidateDic,
+                                       List<Integer> resultList) {
+        int count = 0;
+        List<Integer> candidateList = candidateMap.get(weekIndex).get(0);
+        if (CollectionUtil.isEmpty(candidateList)) {
+            return;
+        }
+        Iterator<Integer> iterator = candidateList.iterator();
+        Integer candidateId = null;
+        while (iterator.hasNext()) {
+            candidateId = iterator.next();
+            if (isIllegalCandidate(alreadyUsedUserSet, currentDate, candidateDic, iterator, candidateId)) {
+                count++;
+                break;
+            }
+        }
+        if (count == 0) {
+            return;
+        }
+        resultList.add(candidateId);
+        alreadyUsedUserSet.add(candidateId);
+        candidateList.remove(0);
+        //2.选择用户后，并从和用户同一个组的人员中选择另外的排班人员;
+        YzzbDutyCandidateVo candidate = candidateDic.get(candidateId);
+        Integer groupId = candidate.getGroupId();
+        Set<Integer> groupSet = groupMap.get(groupId);
+        if (CollectionUtil.isEmpty(groupSet)) {
+            return;
+        }
+        Iterator<Integer> groupItr = groupSet.iterator();
+        while (groupItr.hasNext()) {
+            Integer anotherId = groupItr.next();
+            if (!anotherId.equals(candidateId) && !alreadyUsedUserSet.contains(anotherId)) {
+                resultList.add(anotherId);
+                alreadyUsedUserSet.add(anotherId);
+                count++;
+            }
+        }
+
+    }
+
+    /**
+     * 判断候选人的合法性
+     *
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/9/30 20:36
+     */
+    boolean isIllegalCandidate(Set<Integer> alreadyUsedUserSet,
+                               Date currentDate,
+                               Map<Integer, YzzbDutyCandidateVo> candidateDic,
+                               Iterator<Integer> iterator,
+                               int candidateId) {
+        if (alreadyUsedUserSet.contains(candidateId)) {
+            iterator.remove();
+            return false;
+        }
+        Date lastDutyDate = candidateDic.get(candidateId).getLastDutyDate();
+        int differentDays = DateUtil.getDifferentDays(lastDutyDate, currentDate);
+        if (differentDays < period) {
+            return false;
+        }
+        return true;
+    }
+
 
     /**
      * 设置 值班用户信息
@@ -434,7 +543,7 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         Date startDate = DateUtil.getMonthFirstDay(year, month);
         Date endDate = DateUtil.getMonthLastDay(year, month);
         int count = zbDao.getPublishedDataCountByMonth(startDate, endDate);
-        if(count>0){
+        if (count > 0) {
             return true;
         }
         return false;
