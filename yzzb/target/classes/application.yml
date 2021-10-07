@@ -8,9 +8,10 @@ spring:
     multipart:
       max-file-size: 2MB
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: liyi@123
-    url: jdbc:mysql://1.15.101.117:3306/yzyxxh
+    url: jdbc:mysql://1.15.101.117:3306/yzyxxh?allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:mapping/*.xml
