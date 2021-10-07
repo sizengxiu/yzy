@@ -73,7 +73,8 @@ $(function() {
             {field:'weekIndex',title:'周几',align:'center',width:100},
             {field:'code',title:'工号',align:'center',width:50},
             {field:'name',title:'姓名',align:'center',width:100},
-            {field:'phone',title:'电话',align:'center',width:200},
+            {field:'phone',title:'手机号',align:'center',width:200},
+            {field:'fixedPhone',title:'固定电话',align:'center',width:200},
             {field:'sex',title:'性别',align:'center',width:50,formatter:sexFormatter}
         ]]
     });

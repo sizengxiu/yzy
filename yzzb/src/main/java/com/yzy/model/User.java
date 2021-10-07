@@ -65,6 +65,11 @@ public class User implements Serializable,Cloneable {
      */
     private String phone;
 
+    /**
+     * 固定电话
+     */
+    private String fixedPhone;
+
     private static final long serialVersionUID = 1L;
     @Override
     public User clone(){

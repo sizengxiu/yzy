@@ -15,6 +15,7 @@ public class DutyResultVo  implements  Cloneable{
     private int weekIndex;
     private String name;
     private String phone;
+    private String fixedPhone;
     private int sex;
     private Date date;
 
@@ -81,6 +82,15 @@ public class DutyResultVo  implements  Cloneable{
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+
+    public String getFixedPhone() {
+        return fixedPhone;
+    }
+
+    public void setFixedPhone(String fixedPhone) {
+        this.fixedPhone = fixedPhone;
     }
 
     @Override

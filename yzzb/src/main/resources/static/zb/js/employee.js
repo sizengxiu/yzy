@@ -25,7 +25,8 @@ $(function() {
             {field:'code',title:'工号',align:'center',width:100},
             {field:'name',title:'姓名',align:'center',width:100},
             {field:'sex',title:'性别',align:'center',width:100,formatter:sexFormatter},
-            {field:'phone',title:'电话',align:'center',width:200},
+            {field:'phone',title:'手机号',align:'center',width:200},
+            {field:'fixedPhone',title:'固定电话',align:'center',width:200},
             {field:'userState',title:'员工状态',align:'center',width:50,formatter:userStateFormatter},
             {field:'stop',title:'是否启用',align:'center',width:50,formatter:stopFormatter},
             {field:'createTime',title:'数据时间',align:'center',width:100}

@@ -20,6 +20,7 @@
     <result column="zb_date" jdbcType="DATE" property="date" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="fixed_phone" jdbcType="VARCHAR" property="fixedPhone" />
     <result column="week_index" jdbcType="INTEGER" property="weekIndex" />
   </resultMap>
 
@@ -136,7 +137,7 @@
 
 
   <select id="getPbListByDate" parameterType="date" resultMap="zb">
-    select user.code,user.name,user.phone,user.sex,zb.zb_date,zb.week_index,zb.user_id
+    select user.code,user.name,user.phone,user.fixed_phone,user.sex,zb.zb_date,zb.week_index,zb.user_id
     from yzzb_duty_zb zb
            left join yzzb_zb_r_user r
                      on zb.id=r.zb_id

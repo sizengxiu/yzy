@@ -66,10 +66,11 @@ public class YzzbEmployeeController {
         XSSFSheet sheetAt = workbook.getSheetAt(0);
         for (int i=1;i<=sheetAt.getLastRowNum();i++) {
             Row row =sheetAt.getRow(i);
-            String name = row.getCell(0).getStringCellValue();
-            String code = row.getCell(1).getStringCellValue();
+            String code = row.getCell(0).getStringCellValue();
+            String name = row.getCell(1).getStringCellValue();
             String sex = row.getCell(2).getStringCellValue();
             String phone= dataFormatter.formatCellValue(row.getCell(3)).toString();
+            String fixedPhone= dataFormatter.formatCellValue(row.getCell(4)).toString();
             if (StringUtils.isEmpty(name) || StringUtils.isEmpty(code) || StringUtils.isEmpty(sex) || StringUtils.isEmpty(phone)||(!"男".equals("sex") &&"女".equals("sex") )) {
                 return Result.getErrorResult("第"+i+"个员工信息不全");
             }
@@ -78,6 +79,7 @@ public class YzzbEmployeeController {
             userClone.setCode(code);
             userClone.setSex("男".equals(sex)?1:0);
             userClone.setPhone(phone);
+            userClone.setFixedPhone(fixedPhone);
             list.add(userClone);
             log.info(userClone.toString());
         }

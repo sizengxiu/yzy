@@ -13,6 +13,7 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="fixed_phone" jdbcType="VARCHAR" property="fixedPhone" />
   </resultMap>
   <resultMap id="userVo" type="com.yzy.model.UserVo">
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -26,6 +27,7 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="fixed_phone" jdbcType="VARCHAR" property="fixedPhone" />
     <result column="user_state" jdbcType="VARCHAR" property="userState" />
     <result column="attend_duty" jdbcType="VARCHAR" property="attendDuty" />
   </resultMap>
@@ -181,13 +183,13 @@
     insert into user (id,code, `name`, sex,
     `state`, stop, create_time,
     update_time, username, `password`,
-    phone)
+    phone,fixed_phone)
     values
     <foreach collection="list" item="item" separator=",">
       (#{item.id},#{item.code,jdbcType=VARCHAR}, #{item.name,jdbcType=VARCHAR}, #{item.sex,jdbcType=INTEGER},
       #{item.state,jdbcType=INTEGER}, #{item.stop,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP},
       #{item.updateTime,jdbcType=TIMESTAMP}, #{item.username,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR},
-      #{item.phone,jdbcType=VARCHAR})
+      #{item.phone,jdbcType=VARCHAR},#{item.fixedPhone,jdbcType=VARCHAR})
     </foreach>
   </insert>
 
