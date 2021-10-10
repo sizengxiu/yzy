@@ -90,5 +90,14 @@ public interface YzzbDutyCandidateDao {
      */
     int getCadidateCount();
 
+    /**
+     * 初始化人员上次值班时间
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/10/10 15:47
+     */
+    int initFirstZbDate(@Param("date") Date date);
+
 
 }

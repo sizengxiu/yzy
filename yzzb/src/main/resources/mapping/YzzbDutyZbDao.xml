@@ -203,4 +203,6 @@
   <delete id="deleteAllData" parameterType="map">
     delete from yzzb_duty_zb
   </delete>
+
+
 </mapper>

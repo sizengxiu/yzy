@@ -60,4 +60,13 @@ public interface DutyPlanService {
      */
     boolean  isDataPublished(int year,int month);
 
+    /**
+     * 将人员的上次值班日期提前两个月
+     * @param:
+     * @return:
+     * @auther: szx
+     * @date: 2021/10/10 15:44
+     */
+    boolean initFirstZbDate();
+
 }

@@ -1,6 +1,7 @@
 server:
   servlet:
     context-path: /yzzb
+  port: 8081
 spring:
   application:
     name: yzzb

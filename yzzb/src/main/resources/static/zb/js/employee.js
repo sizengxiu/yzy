@@ -111,7 +111,8 @@ function addEmployeeByBatch(source){
             layer.alert(result.message);
             if(result.success){
                 $('#exampleModal').modal('toggle');
-                $('#user-table').datagrid('reload');
+                // $('#user-table').datagrid('reload');
+                windows.location.reload();
             }
         },
         error:function(status){

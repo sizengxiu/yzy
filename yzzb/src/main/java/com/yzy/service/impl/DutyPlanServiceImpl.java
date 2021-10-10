@@ -548,4 +548,10 @@ public class DutyPlanServiceImpl implements DutyPlanService {
         }
         return false;
     }
+
+    @Override
+    public boolean initFirstZbDate() {
+        candidateDao.initFirstZbDate(new Date());
+        return false;
+    }
 }

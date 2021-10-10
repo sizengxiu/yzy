@@ -12,6 +12,7 @@ public class DateUtil {
 
     public static final SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd ");
+    public static final SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy年MM月dd日");
 
     /**
      * 获取指定日期当月的第一天

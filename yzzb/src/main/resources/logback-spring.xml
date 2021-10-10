@@ -11,7 +11,7 @@
     <contextName>yzzb</contextName>
 
     <!-- 定义日志文件 输入位置 -->
-    <property name="logs" value="logs" />
+    <property name="log_dir" value="logs" />
     <!-- 日志最大的历史 30天 -->
     <property name="maxHistory" value="30" />
     <property name="maxFileSize" value="10MB" />

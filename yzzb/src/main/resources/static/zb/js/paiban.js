@@ -1,6 +1,7 @@
 
-
+var weekDic = new Map();
 $(function() {
+    initWeekDicMap();
     var date = new Date();
     var year=date.getFullYear();
     var month=date.getMonth()+1;
@@ -65,12 +66,17 @@ $(function() {
                     field:'date',
                     rowspan:3
                 });
+                $('#paiban-view-table').datagrid('mergeCells',{
+                    index:i,
+                    field:'weekIndex',
+                    rowspan:3
+                });
             }
 
         },
         columns:[[
             {field:'date',title:'值班日期',align:'center',width:100,formatter:dateFormatter},
-            {field:'weekIndex',title:'周几',align:'center',width:100},
+            {field:'weekIndex',title:'星期',align:'center',width:100,formatter:weekFormatter},
             {field:'code',title:'工号',align:'center',width:50},
             {field:'name',title:'姓名',align:'center',width:100},
             {field:'phone',title:'手机号',align:'center',width:200},
@@ -85,6 +91,18 @@ function comboxLoadFilter(data){
     return data.data;
 }
 
+/**
+ * 初始化星期字典
+ */
+function initWeekDicMap(){
+    weekDic.set(1,"一");
+    weekDic.set(2,"二");
+    weekDic.set(3,"三");
+    weekDic.set(4,"四");
+    weekDic.set(5,"五");
+    weekDic.set(6,"六");
+    weekDic.set(7,"七");
+}
 
 /**
  * 格式化员工性别
@@ -113,6 +131,17 @@ function dateFormatter(value,row,index) {
     var m = date.getMonth()+1;
     var d = date.getDate();
     return y+'年'+m+'月'+d+'日';
+}
+
+/**
+ * 星期格式化
+ * @param value
+ * @param row
+ * @param index
+ * @returns {string}
+ */
+function weekFormatter(value,row,index) {
+    return "星期"+weekDic.get(value);
 }
 
 /**
@@ -199,4 +228,14 @@ function isDataPublished(){
         error:function(status){
         }
     });
+}
+
+
+/**
+ * 导出文件
+ */
+function exportFile(){
+    var year = $('#yearCom').combobox('getValue');
+    var month = $('#monthCom').combobox('getValue');
+    window.open("/yzzb/duty/export?year="+year+"&month="+month);
 }
