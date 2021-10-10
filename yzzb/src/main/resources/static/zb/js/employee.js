@@ -108,12 +108,16 @@ function addEmployeeByBatch(source){
         contentType:false,
         success:function(result){
             console.info(result);
+            // location.reload();
+
             layer.alert(result.message);
+
             if(result.success){
                 $('#exampleModal').modal('toggle');
                 // $('#user-table').datagrid('reload');
-                windows.location.reload();
+                location.replace("/yzzb/zb/html/employee.html");
             }
+
         },
         error:function(status){
 

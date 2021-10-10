@@ -259,7 +259,7 @@
       and user_state=1
       and attend_duty=1
   </select>
-  <update id="initFirstZbDate" parameterType="string">
+  <update id="initFirstZbDate" parameterType="map">
     update yzzb_duty_candidate
     set last_duty_date=#{date}
   </update>

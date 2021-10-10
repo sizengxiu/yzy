@@ -551,7 +551,10 @@ public class DutyPlanServiceImpl implements DutyPlanService {
 
     @Override
     public boolean initFirstZbDate() {
-        candidateDao.initFirstZbDate(new Date());
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.MONTH, -2);
+        candidateDao.initFirstZbDate(calendar.getTime());
         return false;
     }
 }

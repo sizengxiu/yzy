@@ -250,6 +250,7 @@ public class YzzbDutyController {
      */
     @RequestMapping("initFirstZbDate")
     public Result initFirstZbDate() {
+        dutyPlanService.initFirstZbDate();
         return new Result();
     }
 
